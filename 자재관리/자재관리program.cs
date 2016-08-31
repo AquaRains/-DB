@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace 자재관리
 {
-    static class Program
+    static class 자재관리program
     {
         /// <summary>
         /// 해당 응용 프로그램의 주 진입점입니다.
@@ -16,7 +16,7 @@ namespace 자재관리
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

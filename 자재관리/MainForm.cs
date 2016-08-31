@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace 자재관리
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void 지역추가ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.지역 지역form = Forms.지역.Getinstance;
+            지역form.MdiParent = this;
+            지역form.Show();
         }
     }
 }
