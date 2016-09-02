@@ -33,6 +33,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.닫기XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.지역추가ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.직원ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.장부작성ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +42,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.파일FToolStripMenuItem,
-            this.지역추가ToolStripMenuItem});
+            this.지역추가ToolStripMenuItem,
+            this.직원ToolStripMenuItem,
+            this.장부작성ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1092, 24);
@@ -59,13 +63,14 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(110, 6);
             // 
             // 닫기XToolStripMenuItem
             // 
             this.닫기XToolStripMenuItem.Name = "닫기XToolStripMenuItem";
             this.닫기XToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.닫기XToolStripMenuItem.Text = "닫기(&X)";
+            this.닫기XToolStripMenuItem.Click += new System.EventHandler(this.닫기XToolStripMenuItem_Click);
             // 
             // 지역추가ToolStripMenuItem
             // 
@@ -73,6 +78,20 @@
             this.지역추가ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.지역추가ToolStripMenuItem.Text = "지역추가";
             this.지역추가ToolStripMenuItem.Click += new System.EventHandler(this.지역추가ToolStripMenuItem_Click);
+            // 
+            // 직원ToolStripMenuItem
+            // 
+            this.직원ToolStripMenuItem.Name = "직원ToolStripMenuItem";
+            this.직원ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.직원ToolStripMenuItem.Text = "직원";
+            this.직원ToolStripMenuItem.Click += new System.EventHandler(this.직원ToolStripMenuItem_Click);
+            // 
+            // 장부작성ToolStripMenuItem
+            // 
+            this.장부작성ToolStripMenuItem.Name = "장부작성ToolStripMenuItem";
+            this.장부작성ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.장부작성ToolStripMenuItem.Text = "장부작성";
+            this.장부작성ToolStripMenuItem.Click += new System.EventHandler(this.장부작성ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -98,6 +117,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 닫기XToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 지역추가ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 직원ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 장부작성ToolStripMenuItem;
     }
 }
 

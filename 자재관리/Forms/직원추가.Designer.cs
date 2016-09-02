@@ -1,4 +1,4 @@
-﻿namespace 자재관리
+﻿namespace 자재관리.Forms
 {
     partial class 직원추가
     {
@@ -59,6 +59,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn신규 = new System.Windows.Forms.Button();
             this.btn저장 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -98,6 +99,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -328,7 +330,7 @@
             // 
             // btn신규
             // 
-            this.btn신규.Location = new System.Drawing.Point(383, 50);
+            this.btn신규.Location = new System.Drawing.Point(383, 59);
             this.btn신규.Name = "btn신규";
             this.btn신규.Size = new System.Drawing.Size(79, 44);
             this.btn신규.TabIndex = 52;
@@ -337,12 +339,22 @@
             // 
             // btn저장
             // 
-            this.btn저장.Location = new System.Drawing.Point(480, 50);
+            this.btn저장.Location = new System.Drawing.Point(480, 59);
             this.btn저장.Name = "btn저장";
             this.btn저장.Size = new System.Drawing.Size(79, 44);
             this.btn저장.TabIndex = 51;
             this.btn저장.Text = "삭제";
             this.btn저장.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(383, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(176, 27);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "목록으로 보기";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // 직원추가
             // 
@@ -402,5 +414,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt경력;
         private System.Windows.Forms.TextBox txt전번;
+        private System.Windows.Forms.Button button1;
     }
 }

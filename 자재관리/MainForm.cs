@@ -19,9 +19,28 @@ namespace 자재관리
 
         private void 지역추가ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Forms.지역 지역form = Forms.지역.Getinstance;
+            Forms.지역 지역form = Forms.지역.instance;
             지역form.MdiParent = this;
             지역form.Show();
+        }
+
+        private void 직원ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.직원추가 form = Forms.직원추가.instance;
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void 닫기XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void 장부작성ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.거래장부작성 form = Forms.거래장부작성.Instance;
+            form.MdiParent = this;
+            form.Show();
         }
     }
 }

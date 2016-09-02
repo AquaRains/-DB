@@ -20,7 +20,7 @@ namespace 자재관리.Forms
             InitializeComponent();
         }
         static 지역() { }
-        public static 지역 Getinstance
+        public static 지역 instance //doublecheck lock
         {
             get
             {

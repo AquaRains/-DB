@@ -12,10 +12,40 @@ namespace 자재관리.Forms
 {
     public partial class 거래장부작성 : Form
     {
-        public 거래장부작성()
+        
+        private 거래장부작성()
         {
             InitializeComponent();
         }
+
+
+        #region double-lock-check singleton
+        static 거래장부작성 thisform = new 거래장부작성();
+        static object _thisform = new object();
+        public static 거래장부작성 Instance
+        {
+            get
+            {
+                if (thisform == null || thisform.IsDisposed)
+                {
+                    lock (_thisform)
+                    {
+                        if (thisform == null || thisform.IsDisposed)
+                        {
+                            thisform = new 거래장부작성();
+                            return thisform;
+                        }
+                        return thisform;
+                    }
+                }
+                return thisform;
+            }
+        }
+        #endregion
+
+
+
+
 
         private void 거래장부작성_Load(object sender, EventArgs e)
         {
