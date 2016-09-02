@@ -2,7 +2,7 @@
 
 using System.Windows.Forms;
 
-namespace GAS
+namespace 자재관리
 {
     public partial class 품목추가 : Form
     {

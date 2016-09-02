@@ -2,7 +2,7 @@
 
 using System.Windows.Forms;
 
-namespace GAS.내부form
+namespace 자재관리.Forms
 {
     public partial class 고객추가 : Form
     {

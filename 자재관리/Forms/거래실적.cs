@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GAS
+namespace 자재관리
 {
     public partial class 배달실적 : Form
     {

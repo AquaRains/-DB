@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GAS
+namespace 자재관리.Forms
 {
     public partial class 거래장부작성 : Form
     {

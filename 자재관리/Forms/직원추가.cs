@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
 
-namespace GAS
+namespace 자재관리
 {
     public partial class 직원추가 : Form
     {

@@ -70,6 +70,12 @@
     <Compile Include="Forms\지역.Designer.cs">
       <DependentUpon>지역.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\직원목록.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\직원목록.Designer.cs">
+      <DependentUpon>직원목록.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\직원추가.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\지역.resx">
       <DependentUpon>지역.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\직원목록.resx">
+      <DependentUpon>직원목록.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\직원추가.resx">
       <DependentUpon>직원추가.cs</DependentUpon>

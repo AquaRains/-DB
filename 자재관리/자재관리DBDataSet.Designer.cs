@@ -10,9 +10,6 @@
 
 #pragma warning disable 1591
 
-using System;
-using System.Data;
-
 namespace 자재관리 {
     
     
@@ -1429,8 +1426,6 @@ namespace 자재관리.자재관리DBDataSetTableAdapters {
         public virtual int Update(string 지역명, int Original_지역코드, string Original_지역명) {
             return this.Update(지역명, Original_지역코드, Original_지역명, Original_지역코드);
         }
-
-
     }
     
     /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace GAS
+﻿namespace 자재관리
 {
     partial class 배달실적
     {
