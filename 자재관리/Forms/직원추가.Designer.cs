@@ -54,8 +54,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt경력 = new System.Windows.Forms.TextBox();
             this.txt전번 = new System.Windows.Forms.TextBox();
+            this.dataSet1 = new System.Data.DataSet();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -79,7 +81,7 @@
             // 
             // btn닫기
             // 
-            this.btn닫기.Location = new System.Drawing.Point(705, 18);
+            this.btn닫기.Location = new System.Drawing.Point(706, 18);
             this.btn닫기.Name = "btn닫기";
             this.btn닫기.Size = new System.Drawing.Size(87, 44);
             this.btn닫기.TabIndex = 25;
@@ -157,7 +159,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(100, 123);
             this.pictureBox1.TabIndex = 53;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn저장
             // 
@@ -171,7 +173,7 @@
             // lb비고
             // 
             this.lb비고.AutoSize = true;
-            this.lb비고.Location = new System.Drawing.Point(41, 277);
+            this.lb비고.Location = new System.Drawing.Point(41, 236);
             this.lb비고.Name = "lb비고";
             this.lb비고.Size = new System.Drawing.Size(29, 12);
             this.lb비고.TabIndex = 50;
@@ -188,10 +190,10 @@
             // 
             // txt비고
             // 
-            this.txt비고.Location = new System.Drawing.Point(76, 274);
+            this.txt비고.Location = new System.Drawing.Point(76, 233);
             this.txt비고.Multiline = true;
             this.txt비고.Name = "txt비고";
-            this.txt비고.Size = new System.Drawing.Size(483, 168);
+            this.txt비고.Size = new System.Drawing.Size(483, 209);
             this.txt비고.TabIndex = 49;
             // 
             // txtID
@@ -298,6 +300,10 @@
             this.txt전번.Size = new System.Drawing.Size(120, 21);
             this.txt전번.TabIndex = 39;
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
+            // 
             // 직원추가
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -319,6 +325,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,5 +358,6 @@
         private System.Windows.Forms.TextBox txt경력;
         private System.Windows.Forms.TextBox txt전번;
         private System.Windows.Forms.Button button1;
+        private System.Data.DataSet dataSet1;
     }
 }

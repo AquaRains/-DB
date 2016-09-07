@@ -1,9 +1,7 @@
-﻿
-using System.Windows.Forms;
-
-
+﻿using System.Windows.Forms;
 using System.Drawing;
-using System.IO;
+using System.Data;
+
 
 namespace 자재관리.Forms
 {
@@ -11,9 +9,15 @@ namespace 자재관리.Forms
     {
         static 직원추가 thisform = new 직원추가();
         static object _thisform = new object();
+
         private 직원추가()
         {
             InitializeComponent();
+            selfInit();
+        }
+
+        void selfInit()
+        {
             openFileDialog1.FileOk += (o, v) =>
             {
                 try
@@ -21,14 +25,18 @@ namespace 자재관리.Forms
                     string s = openFileDialog1.FileName;
                     pictureBox1.Image = Image.FromFile(s);
                     s = "";
-                    
+
                 }
-                catch (System.Exception e)
+                catch (System.Exception ex)
                 {
 
-                    throw e;
+                    throw ex;
                 }
-            };
+            }; //그림 불러오기 이벤트 추가
+            SQLConnect 직원connect = new SQLConnect("localhost:1455", "자재관리DB", "sa", "sapass");
+            직원connect.runsql("SELECT * FROM 직원", ref dataSet1);
+
+            
         }
         public static 직원추가 instance
             {
@@ -53,7 +61,8 @@ namespace 자재관리.Forms
         private void 직원추가_Load(object sender, System.EventArgs e)
         {
 
-            // TODO: 이 코드는 데이터를 'GASDataSet.직원' 테이블에 로드합니다. 필요한 경우 이 코드를 이동하거나 제거할 수 있습니다.
+
+
 
             listBox1.Refresh();
             
@@ -96,12 +105,13 @@ namespace 자재관리.Forms
 
         private void datachange(object sender, System.EventArgs e)
         {
-           
+            openFileDialog1.ShowDialog(this.MdiParent);
         }
 
         private void pictureBox1_Click(object sender, System.EventArgs e)
         {
             
+            openFileDialog1.ShowDialog(this.MdiParent);
         }
 
         private void button1_Click_1(object sender, System.EventArgs e)
@@ -111,12 +121,6 @@ namespace 자재관리.Forms
         목록.Show();
         }
 
-        private void pictureBox1_Click_1(object sender, System.EventArgs e)
-        {
-            
-            openFileDialog1.ShowDialog(this.MdiParent);
-            
-        }
-        
+
     }
 }
