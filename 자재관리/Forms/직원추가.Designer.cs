@@ -54,10 +54,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt경력 = new System.Windows.Forms.TextBox();
             this.txt전번 = new System.Windows.Forms.TextBox();
-            this.dataSet1 = new System.Data.DataSet();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -300,10 +298,6 @@
             this.txt전번.Size = new System.Drawing.Size(120, 21);
             this.txt전번.TabIndex = 39;
             // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "NewDataSet";
-            // 
             // 직원추가
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -325,7 +319,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,6 +351,5 @@
         private System.Windows.Forms.TextBox txt경력;
         private System.Windows.Forms.TextBox txt전번;
         private System.Windows.Forms.Button button1;
-        private System.Data.DataSet dataSet1;
     }
 }

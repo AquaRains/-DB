@@ -9,6 +9,7 @@ namespace 자재관리.Forms
     {
         static 직원추가 thisform = new 직원추가();
         static object _thisform = new object();
+        DataSet dataset = new DataSet();
 
         private 직원추가()
         {
@@ -34,7 +35,8 @@ namespace 자재관리.Forms
                 }
             }; //그림 불러오기 이벤트 추가
             SQLConnect 직원connect = new SQLConnect("localhost:1455", "자재관리DB", "sa", "sapass");
-            직원connect.runsql("SELECT * FROM 직원", ref dataSet1);
+            직원connect.runsql("SELECT * FROM 직원", ref dataset);
+            listBox1.DataSource = dataset;
 
             
         }
