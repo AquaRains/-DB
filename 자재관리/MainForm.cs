@@ -31,16 +31,19 @@ namespace 자재관리
             form.Show();
         }
 
-        private void 닫기XToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
 
         private void 장부작성ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Forms.거래장부작성 form = Forms.거래장부작성.Instance;
             form.MdiParent = this;
             form.Show();
+        }
+
+
+        private void 닫기XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

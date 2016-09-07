@@ -14,6 +14,21 @@ namespace 자재관리.Forms
         private 직원추가()
         {
             InitializeComponent();
+            openFileDialog1.FileOk += (o, v) =>
+            {
+                try
+                {
+                    string s = openFileDialog1.FileName;
+                    pictureBox1.Image = Image.FromFile(s);
+                    s = "";
+                    
+                }
+                catch (System.Exception e)
+                {
+
+                    throw e;
+                }
+            };
         }
         public static 직원추가 instance
             {
@@ -95,5 +110,13 @@ namespace 자재관리.Forms
             목록.MdiParent = MdiParent;
         목록.Show();
         }
+
+        private void pictureBox1_Click_1(object sender, System.EventArgs e)
+        {
+            
+            openFileDialog1.ShowDialog(this.MdiParent);
+            
+        }
+        
     }
 }
