@@ -45,5 +45,12 @@ namespace 자재관리
         {
             this.Close();
         }
+
+        private void 물품ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.품목추가 form = Forms.품목추가.instance;
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

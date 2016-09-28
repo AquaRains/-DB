@@ -1,4 +1,4 @@
-﻿namespace 자재관리
+﻿namespace 자재관리.Forms
 {
     partial class 품목추가
     {
@@ -97,6 +97,7 @@
             this.button2.TabIndex = 29;
             this.button2.Text = "제거";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -106,6 +107,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "추가";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -141,7 +143,7 @@
             // 
             // txt가격
             // 
-            this.txt가격.Location = new System.Drawing.Point(57, 48);
+            this.txt가격.Location = new System.Drawing.Point(75, 48);
             this.txt가격.Name = "txt가격";
             this.txt가격.Size = new System.Drawing.Size(116, 21);
             this.txt가격.TabIndex = 21;
@@ -149,7 +151,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 51);
+            this.label3.Location = new System.Drawing.Point(40, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 20;
@@ -159,7 +161,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 22);
+            this.label2.Location = new System.Drawing.Point(28, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 19;
@@ -167,7 +169,7 @@
             // 
             // txt품목명
             // 
-            this.txt품목명.Location = new System.Drawing.Point(57, 17);
+            this.txt품목명.Location = new System.Drawing.Point(75, 17);
             this.txt품목명.Name = "txt품목명";
             this.txt품목명.Size = new System.Drawing.Size(116, 21);
             this.txt품목명.TabIndex = 18;
@@ -180,6 +182,7 @@
             this.button3.TabIndex = 30;
             this.button3.Text = "닫기";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // 품목추가
             // 

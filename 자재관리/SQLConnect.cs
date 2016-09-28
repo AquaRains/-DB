@@ -11,42 +11,48 @@ namespace 자재관리
 {
     class SQLConnect
     {
-        string connectionStr = "";
-        string _sql;
+        string ConnectionStr = "";
         SqlConnection Connection;
         SqlCommand Command = new SqlCommand();
-        DataSet ds = new DataSet();
-        SqlDataAdapter adapter = new SqlDataAdapter();
+        SqlDataAdapter adapter;
+        SqlCommandBuilder builder = new SqlCommandBuilder();
+        public DataTable mydatatable = new DataTable();
+
 
         public SQLConnect(string _server, string _database , string _user, string _password)
         {
-            connectionStr = string.Format("server={0};database={1};user={2};password={3}", _server, _database, _user, _password);
-            Connection = new SqlConnection(connectionStr);
+            ConnectionStr = string.Format("server={0} ; uid = {1} ; pwd = {2} ; database = {3}", _server, _user, _password, _database);
+            Connection = new SqlConnection(ConnectionStr);
+
+            Command = Connection.CreateCommand();
             Command.Connection = Connection;
-        }
 
-        public bool runsql(string sql,ref DataSet dataset)
+            
+        }
+        public void SelectandFill(string sql)
         {
-            _sql = sql;
-            Command.CommandText = _sql;
-
-            try
-            {
-                adapter.SelectCommand = Command;
-                adapter.Fill(ds);
-                dataset = ds;
-                return true;
-            }
-            catch(Exception e)
-            {
-                return false;
-                throw;      
-            }
-            finally
-            {
-                Connection.Close();
-            }
-
+            Command.CommandText = sql;
+            adapter = new SqlDataAdapter(Command);
+            adapter.Fill(mydatatable);
         }
+
+        public void applychange(string sql)
+        {
+ 
+            SqlCommand cmd = new SqlCommand(sql);
+            cmd = Connection.CreateCommand();
+            cmd.CommandText = sql;
+
+            Connection.Open();
+            mydatatable.Clear();
+            cmd.ExecuteNonQuery();
+
+            adapter.Fill(mydatatable);
+            Connection.Close();
+
+            
+        }
+
+
     }
 }

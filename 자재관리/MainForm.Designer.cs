@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.닫기XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.직원ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.지역ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.물품ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,7 +40,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.닫기XToolStripMenuItem,
-            this.직원ToolStripMenuItem});
+            this.직원ToolStripMenuItem,
+            this.지역ToolStripMenuItem,
+            this.물품ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1092, 24);
@@ -58,6 +62,20 @@
             this.직원ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.직원ToolStripMenuItem.Text = "직원";
             this.직원ToolStripMenuItem.Click += new System.EventHandler(this.직원ToolStripMenuItem_Click);
+            // 
+            // 지역ToolStripMenuItem
+            // 
+            this.지역ToolStripMenuItem.Name = "지역ToolStripMenuItem";
+            this.지역ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.지역ToolStripMenuItem.Text = "지역";
+            this.지역ToolStripMenuItem.Click += new System.EventHandler(this.지역추가ToolStripMenuItem_Click);
+            // 
+            // 물품ToolStripMenuItem
+            // 
+            this.물품ToolStripMenuItem.Name = "물품ToolStripMenuItem";
+            this.물품ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.물품ToolStripMenuItem.Text = "물품";
+            this.물품ToolStripMenuItem.Click += new System.EventHandler(this.물품ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -84,6 +102,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 닫기XToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 직원ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 지역ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 물품ToolStripMenuItem;
     }
 }
 

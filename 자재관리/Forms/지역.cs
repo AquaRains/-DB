@@ -15,6 +15,7 @@ namespace 자재관리.Forms
     {
         static 지역 Thisform = null;
         static object _Thisform = new object();
+        SQLConnect connect;
         private 지역()
         {
             InitializeComponent();
@@ -50,35 +51,36 @@ namespace 자재관리.Forms
 
         private void 지역_Load(object sender, EventArgs e)
         {
-            // TODO: 이 코드는 데이터를 '자재관리DBDataSet.지역' 테이블에 로드합니다. 필요 시 이 코드를 이동하거나 제거할 수 있습니다.
-            this.지역TableAdapter.Fill(this.자재관리DBDataSet.지역);
+            connect = new SQLConnect("127.0.0.1", "자재관리DB", "sa", "sapass");
+            connect.SelectandFill("SELECT * FROM 지역");
+            dataGridView1.DataSource = connect.mydatatable;
 
+            txt지역코드.DataBindings.Add("text", connect.mydatatable,connect.mydatatable.Columns[0].ColumnName);
+            txt지역명.DataBindings.Add("text", connect.mydatatable, connect.mydatatable.Columns[1].ColumnName);
         }
 
         private void btn추가_Click(object sender, EventArgs e)
         {
-            this.자재관리DBDataSet.지역.Add지역Row(txt지역명.Text);
-            지역AcceptAndUpdate();
+
+            connect.applychange(string.Format("INSERT INTO 지역 ({0}) VALUES ('{1}')",
+                                                   connect.mydatatable.Columns[1].ColumnName,
+                                                   txt지역명.Text));
         }
 
         private void btn지역제거_Click(object sender, EventArgs e)
         {
-            this.자재관리DBDataSet.지역.Remove지역Row(자재관리DBDataSet.지역[int.Parse(txt지역코드.Text)-1]);
-            지역AcceptAndUpdate();
+            string sql = string.Format("DELETE FROM 지역 WHERE [{0}] = '{1}'",connect.mydatatable.Columns[0].ColumnName,txt지역코드.Text);
+            connect.applychange(sql);
         }
 
         private void btn수정_Click(object sender, EventArgs e)
         {
-            this.자재관리DBDataSet.지역[int.Parse(txt지역코드.Text)-1].지역명 = txt지역명.Text;
-            지역AcceptAndUpdate();
+            string sql = string.Format("UPDATE 지역 SET {0} = '{1}' WHERE {2} = {3}",connect.mydatatable.Columns[1],
+                                                                                    txt지역명.Text,
+                                                                                    connect.mydatatable.Columns[0],
+                                                                                    txt지역코드.Text);
+            connect.applychange(sql);
         }
-        private void 지역AcceptAndUpdate()
-        {
-            지역TableAdapter.Update(자재관리DBDataSet.지역);
-            자재관리DBDataSet.지역.AcceptChanges();
-            
-          
-            //지역TableAdapter.Fill(this.자재관리DBDataSet.지역);
-        }
+
     }
 }
