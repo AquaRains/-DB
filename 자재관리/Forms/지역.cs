@@ -51,7 +51,7 @@ namespace 자재관리.Forms
 
         private void 지역_Load(object sender, EventArgs e)
         {
-            connect = new SQLConnect("127.0.0.1", "자재관리DB", "sa", "sapass");
+            connect = new SQLConnect();
             connect.SelectandFill("SELECT * FROM 지역");
             dataGridView1.DataSource = connect.mydatatable;
 
@@ -62,7 +62,7 @@ namespace 자재관리.Forms
         private void btn추가_Click(object sender, EventArgs e)
         {
 
-            connect.applychange(string.Format("INSERT INTO 지역 ({0}) VALUES ('{1}')",
+            connect.transactRun(string.Format("INSERT INTO 지역 ({0}) VALUES ('{1}')",
                                                    connect.mydatatable.Columns[1].ColumnName,
                                                    txt지역명.Text));
         }
@@ -70,7 +70,7 @@ namespace 자재관리.Forms
         private void btn지역제거_Click(object sender, EventArgs e)
         {
             string sql = string.Format("DELETE FROM 지역 WHERE [{0}] = '{1}'",connect.mydatatable.Columns[0].ColumnName,txt지역코드.Text);
-            connect.applychange(sql);
+            connect.transactRun(sql);
         }
 
         private void btn수정_Click(object sender, EventArgs e)
@@ -79,8 +79,9 @@ namespace 자재관리.Forms
                                                                                     txt지역명.Text,
                                                                                     connect.mydatatable.Columns[0],
                                                                                     txt지역코드.Text);
-            connect.applychange(sql);
+            connect.transactRun(sql);
         }
+
 
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ExportToExcel.cs" />
     <Compile Include="Forms\거래실적.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,7 +95,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SQLConnect.cs" />
+    <Compile Include="Classes\SQLConnect.cs" />
     <Compile Include="자재관리program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\거래실적.resx">

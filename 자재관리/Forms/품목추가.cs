@@ -41,7 +41,7 @@ namespace 자재관리.Forms
 
         private void 품목추가_Load(object sender, EventArgs e)
         {
-            connect = new SQLConnect("127.0.0.1", "자재관리DB", "sa", "sapass");
+            connect = new SQLConnect();
             connect.SelectandFill("SELECT * FROM 품목");
             dt = connect.mydatatable;
             dataGridView1.DataSource = dt;
@@ -61,7 +61,7 @@ namespace 자재관리.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            connect.applychange(string.Format("INSERT INTO 품목 ({0},{1},{2},{3}) VALUES ('{4}','{5}','{6}',{7})",
+            connect.transactRun(string.Format("INSERT INTO 품목 ({0},{1},{2},{3}) VALUES ('{4}','{5}','{6}',{7})",
                                                 dt.Columns[1].ColumnName,
                                                 dt.Columns[2].ColumnName,
                                                 dt.Columns[3].ColumnName,

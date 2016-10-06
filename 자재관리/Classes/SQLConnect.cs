@@ -7,10 +7,19 @@ using System.Data;
 using System.Data.SqlClient;
 
 
+
 namespace 자재관리
 {
     class SQLConnect
     {
+        const string _server = "127.0.0.1";
+        const string _uid = "sa";
+        const string _pwd = "sapass";
+        const string _dbname = "자재관리DB";
+        
+
+
+
         string ConnectionStr = "";
         SqlConnection Connection;
         SqlCommand Command = new SqlCommand();
@@ -19,9 +28,9 @@ namespace 자재관리
         public DataTable mydatatable = new DataTable();
 
 
-        public SQLConnect(string _server, string _database , string _user, string _password)
+        public SQLConnect()
         {
-            ConnectionStr = string.Format("server={0} ; uid = {1} ; pwd = {2} ; database = {3}", _server, _user, _password, _database);
+            ConnectionStr = string.Format("server={0} ; uid = {1} ; pwd = {2} ; database = {3}", _server, _uid, _pwd, _dbname);
             Connection = new SqlConnection(ConnectionStr);
 
             Command = Connection.CreateCommand();
@@ -36,7 +45,7 @@ namespace 자재관리
             adapter.Fill(mydatatable);
         }
 
-        public void applychange(string sql)
+        public void transactRun(string sql)
         {
  
             SqlCommand cmd = new SqlCommand(sql);

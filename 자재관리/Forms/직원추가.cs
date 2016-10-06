@@ -9,16 +9,21 @@ namespace 자재관리.Forms
     {
         static 직원추가 thisform = null;
         static object _thisform = new object();
+        DataRow curruntrow;
+
+        SQLConnect connect = new SQLConnect();
+        DataTable dt = new DataTable();
         
 
         private 직원추가()
         {
             InitializeComponent();
-            selfInit();
+            Init();
         }
 
-        void selfInit()
+        void Init()
         {
+
             openFileDialog1.FileOk += (o, v) =>
             {
                 try
@@ -59,26 +64,29 @@ namespace 자재관리.Forms
 
         private void 직원추가_Load(object sender, System.EventArgs e)
         {
+            connect.SelectandFill("SELECT * FROM dbo.직원");
+            this.dt = connect.mydatatable;
 
 
+            listBox1.DataBindings.Add("DataSource", dt, dt.TableName);
+            listBox1.DataBindings.Add("DisplayMember",dt,"성명");
+            txtID.DataBindings.Add("Text", dt, "ID");
+            txt이름.DataBindings.Add("Text", dt, "성명");
+            txt전번.DataBindings.Add("Text", dt, "전화번호");
+            txt주민.DataBindings.Add("Text", dt, "생년월일");
+            txt면허.DataBindings.Add("Text", dt, "면허번호");
+            txt경력.DataBindings.Add("Text", dt, "경력");
+            txt현주소.DataBindings.Add("Text", dt, "주소");
+            txt비고.DataBindings.Add("Text", dt, "비고");
+            pictureBox1.DataBindings.Add("Image", dt, "image");                                                                                                                                                                                                                       
 
+           listBox1.Refresh();
+            
 
-            listBox1.Refresh();
             
         }
 
-        private void button1_Click(object sender, System.EventArgs e)
-        {
-            
-        }
 
-        private void listBox1_SelectedIndexChanged(object sender, System.EventArgs e)
-        {
-           
-         
-            
-            
-        }
 
         private void button2_Click(object sender, System.EventArgs e)
         {
@@ -115,9 +123,9 @@ namespace 자재관리.Forms
 
         private void button1_Click_1(object sender, System.EventArgs e)
         {
-        직원목록 목록 = 직원목록.instance;
-            목록.MdiParent = MdiParent;
-        목록.Show();
+            직원목록 목록 = 직원목록.instance;
+            목록.MdiParent = this.MdiParent;
+            목록.Show();
         }
 
 

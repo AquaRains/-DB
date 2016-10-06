@@ -297,7 +297,7 @@
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 일련번호DataGridViewTextBoxColumn;
+
         private System.Windows.Forms.Button btn추가;
         private System.Windows.Forms.Button btn제거;
         private System.Windows.Forms.Button btn닫기;
@@ -305,7 +305,7 @@
         private System.Windows.Forms.CheckBox chk미수금;
         private System.Windows.Forms.TextBox txt지역;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 거래일시DataGridViewTextBoxColumn;
+
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn거래처창열기;
         private System.Windows.Forms.ComboBox cmb거래처;
