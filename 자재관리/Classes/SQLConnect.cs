@@ -34,7 +34,9 @@ namespace 자재관리
         public DataTable mydatatable = new DataTable();
 
 
-        
+        /// <summary>
+        /// 이 클래스의 생성자입니다. conenction을 초기화 합니다
+        /// </summary>
         public SQLConnect()
         {
             ConnectionStr = string.Format("server={0} ; uid = {1} ; pwd = {2} ; database = {3}", _server, _uid, _pwd, _dbname);
@@ -103,7 +105,7 @@ namespace 자재관리
 
             Connection.Open();
             mydatatable.Clear();
-            cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();  // 단일문 실행용 메서드
 
             adapter.Fill(mydatatable);
             Connection.Close();
