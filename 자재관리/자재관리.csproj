@@ -47,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ExportToExcel.cs" />
-    <Compile Include="Forms\거래실적.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\거래실적.Designer.cs">
-      <DependentUpon>거래실적.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\고객추가.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,9 +74,6 @@
     <Compile Include="Classes\SQLConnect.cs" />
     <Compile Include="자재관리program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\거래실적.resx">
-      <DependentUpon>거래실적.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\고객추가.resx">
       <DependentUpon>고객추가.cs</DependentUpon>
     </EmbeddedResource>
