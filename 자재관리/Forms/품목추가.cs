@@ -41,6 +41,7 @@ namespace 자재관리.Forms
 
         private void 품목추가_Load(object sender, EventArgs e)
         {
+            /*
             connect = new SQLConnect();
             dt = connect.SelectandFill("SELECT * FROM 품목");
             dataGridView1.DataSource = dt;
@@ -49,6 +50,7 @@ namespace 자재관리.Forms
             txt제조회사.DataBindings.Add("text", dt, dt.Columns[2].ColumnName);
             txt가격.DataBindings.Add("text", dt, dt.Columns[3].ColumnName);
             chk취급주의.DataBindings.Add("Checked", dt, dt.Columns[4].ColumnName);
+             * */
         }
 
 

@@ -44,28 +44,53 @@ namespace 자재관리.Forms
         {
             this.dt = dbconnect.SelectandFill("SELECT * FROM dbo.customers");
             dataGridView1.DataSource = dt;
-        }
+            
 
+            txt이름.DataBindings.Add("Text", dt,dt.Columns[1].ColumnName);
+            txt대표자.DataBindings.Add("Text", dt, dt.Columns[2].ColumnName);
+            txt전화번호.DataBindings.Add("Text", dt, dt.Columns[3].ColumnName);
+            txt메모.DataBindings.Add("Text", dt, dt.Columns[4].ColumnName);
+
+
+        }
+        /// <summary>
+        /// 닫기 버튼 클릭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// 추가 버튼 클릭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            try {
+            System.Data.SqlClient.SqlParameter[] parameters = {new System.Data.SqlClient.SqlParameter("@customer_compnay", txt이름.Text),
+                                                                    new System.Data.SqlClient.SqlParameter("@customer_name", txt대표자.Text),
+                                                                    new System.Data.SqlClient.SqlParameter("@customer_phonenum", txt전화번호.Text),
+                                                                    new System.Data.SqlClient.SqlParameter("@memo", txt메모.Text)};
 
-            }
-            catch (Exception E)
-            {
-                MessageBox.Show(E.ToString());
-            }
+
+            dbconnect.transactRun("exec customers_insert", parameters);
+            // dbconnect.Command.Parameters.AddWithValue();
         }
 
+
+        /// <summary>
+        /// 삭제 버튼 클릭
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             Close();
 
         }
+
     }
 }

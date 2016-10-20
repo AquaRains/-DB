@@ -28,9 +28,9 @@ namespace 자재관리
 
         string ConnectionStr = "";
         SqlConnection Connection;
-        SqlCommand Command = new SqlCommand();
-        SqlDataAdapter adapter;
-        SqlCommandBuilder builder = new SqlCommandBuilder();
+        public SqlCommand Command = new SqlCommand();
+        public SqlDataAdapter adapter;
+        
         
 
 
@@ -99,16 +99,24 @@ namespace 자재관리
         /// transact 혹은 sp 처리때 사용 할 예정
         /// </summary>
         /// <param name="sql">sql 구문</param>
+        public void transactRun(string sql, SqlParameter[] parameters)
+        {
+            Command.CommandText = sql;
+            Command.Parameters.AddRange(parameters);
+            Connection.Open();
+            Command.ExecuteNonQuery(); 
+            Connection.Close();
+
+            
+        }
+
         public void transactRun(string sql)
         {
             Command.CommandText = sql;
             Connection.Open();
             Command.ExecuteNonQuery();  // 단일문 실행용 메서드
             Connection.Close();
-
-            
         }
-
         public DataTable sp_select(string sql)
         {
             DataTable mydatatable = new DataTable();

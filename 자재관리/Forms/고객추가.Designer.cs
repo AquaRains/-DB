@@ -39,7 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt주소 = new System.Windows.Forms.TextBox();
+            this.txt메모 = new System.Windows.Forms.TextBox();
             this.txt전화번호 = new System.Windows.Forms.TextBox();
             this.txt이름 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -48,9 +48,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 17);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(507, 42);
+            this.button1.Size = new System.Drawing.Size(650, 42);
             this.button1.TabIndex = 0;
             this.button1.Text = "닫기";
             this.button1.UseVisualStyleBackColor = true;
@@ -62,11 +63,13 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 216);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 163);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(507, 460);
+            this.dataGridView1.Size = new System.Drawing.Size(650, 526);
             this.dataGridView1.TabIndex = 1;
             // 
             // groupBox1
@@ -79,19 +82,20 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txt주소);
+            this.groupBox1.Controls.Add(this.txt메모);
             this.groupBox1.Controls.Add(this.txt전화번호);
             this.groupBox1.Controls.Add(this.txt이름);
-            this.groupBox1.Location = new System.Drawing.Point(14, 65);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(508, 145);
+            this.groupBox1.Size = new System.Drawing.Size(650, 115);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(286, 69);
+            this.label5.Location = new System.Drawing.Point(449, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(195, 12);
             this.label5.TabIndex = 23;
@@ -99,7 +103,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(387, 20);
+            this.button3.Location = new System.Drawing.Point(550, 20);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 42);
             this.button3.TabIndex = 22;
@@ -109,17 +113,18 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(287, 20);
+            this.button2.Location = new System.Drawing.Point(450, 20);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 42);
             this.button2.TabIndex = 21;
             this.button2.Text = "추가";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 69);
+            this.label4.Location = new System.Drawing.Point(12, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 12);
             this.label4.TabIndex = 20;
@@ -127,15 +132,15 @@
             // 
             // txt대표자
             // 
-            this.txt대표자.Location = new System.Drawing.Point(123, 69);
+            this.txt대표자.Location = new System.Drawing.Point(123, 77);
             this.txt대표자.Name = "txt대표자";
             this.txt대표자.Size = new System.Drawing.Size(100, 21);
-            this.txt대표자.TabIndex = 19;
+            this.txt대표자.TabIndex = 15;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 95);
+            this.label3.Location = new System.Drawing.Point(247, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 12);
             this.label3.TabIndex = 18;
@@ -144,7 +149,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 43);
+            this.label2.Location = new System.Drawing.Point(11, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 12);
             this.label2.TabIndex = 17;
@@ -153,29 +158,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 17);
+            this.label1.Location = new System.Drawing.Point(11, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 12);
             this.label1.TabIndex = 16;
             this.label1.Text = "상호/대표명";
             // 
-            // txt주소
+            // txt메모
             // 
-            this.txt주소.Location = new System.Drawing.Point(13, 110);
-            this.txt주소.Name = "txt주소";
-            this.txt주소.Size = new System.Drawing.Size(468, 21);
-            this.txt주소.TabIndex = 15;
+            this.txt메모.Location = new System.Drawing.Point(249, 40);
+            this.txt메모.Multiline = true;
+            this.txt메모.Name = "txt메모";
+            this.txt메모.Size = new System.Drawing.Size(184, 58);
+            this.txt메모.TabIndex = 16;
             // 
             // txt전화번호
             // 
-            this.txt전화번호.Location = new System.Drawing.Point(123, 41);
+            this.txt전화번호.Location = new System.Drawing.Point(123, 50);
             this.txt전화번호.Name = "txt전화번호";
             this.txt전화번호.Size = new System.Drawing.Size(100, 21);
             this.txt전화번호.TabIndex = 14;
             // 
             // txt이름
             // 
-            this.txt이름.Location = new System.Drawing.Point(123, 14);
+            this.txt이름.Location = new System.Drawing.Point(123, 20);
             this.txt이름.Name = "txt이름";
             this.txt이름.Size = new System.Drawing.Size(90, 21);
             this.txt이름.TabIndex = 13;
@@ -184,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 688);
+            this.ClientSize = new System.Drawing.Size(650, 689);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
@@ -212,7 +218,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt주소;
+        private System.Windows.Forms.TextBox txt메모;
         private System.Windows.Forms.TextBox txt전화번호;
         private System.Windows.Forms.TextBox txt이름;
     }

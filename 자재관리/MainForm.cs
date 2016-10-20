@@ -54,6 +54,9 @@ namespace 자재관리
 
         private void 고객ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Forms.고객추가 form = Forms.고객추가.instance;
+            form.MdiParent = this;
+            form.Show();
 
         }
     }
