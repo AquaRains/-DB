@@ -51,5 +51,10 @@ namespace 자재관리
         {
             SQLConnect.ConnectionCheck();
         }
+
+        private void 고객ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

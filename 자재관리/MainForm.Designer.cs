@@ -33,6 +33,7 @@
             this.직원ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.물품ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnConCheck = new System.Windows.Forms.Button();
+            this.고객ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +42,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.닫기XToolStripMenuItem,
             this.직원ToolStripMenuItem,
-            this.물품ToolStripMenuItem});
+            this.물품ToolStripMenuItem,
+            this.고객ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1092, 24);
@@ -80,6 +82,13 @@
             this.btnConCheck.Visible = false;
             this.btnConCheck.Click += new System.EventHandler(this.btnConCheck_Click);
             // 
+            // 고객ToolStripMenuItem
+            // 
+            this.고객ToolStripMenuItem.Name = "고객ToolStripMenuItem";
+            this.고객ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.고객ToolStripMenuItem.Text = "고객";
+            this.고객ToolStripMenuItem.Click += new System.EventHandler(this.고객ToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -109,6 +118,7 @@
         private System.Windows.Forms.ToolStripMenuItem 직원ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 물품ToolStripMenuItem;
         private System.Windows.Forms.Button btnConCheck;
+        private System.Windows.Forms.ToolStripMenuItem 고객ToolStripMenuItem;
     }
 }
 
