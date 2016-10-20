@@ -97,9 +97,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(449, 69);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(195, 12);
+            this.label5.Size = new System.Drawing.Size(195, 24);
             this.label5.TabIndex = 23;
-            this.label5.Text = "※삭제 시 상호/대표명 정확히 입력";
+            this.label5.Text = "※삭제 시 상호/대표명 정확히 입력\r\n(그리드에서 클릭해서 지우세요)";
             // 
             // button3
             // 
