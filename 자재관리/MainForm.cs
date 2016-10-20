@@ -52,5 +52,17 @@ namespace 자재관리
             form.MdiParent = this;
             form.Show();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+#if DEBUG
+            btnConCheck.Visible = true;
+#endif
+        }
+
+        private void btnConCheck_Click(object sender, EventArgs e)
+        {
+            SQLConnect.ConnectionCheck();
+        }
     }
 }

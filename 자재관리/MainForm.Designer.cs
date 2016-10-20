@@ -33,6 +33,7 @@
             this.직원ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.지역ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.물품ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnConCheck = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,11 +78,23 @@
             this.물품ToolStripMenuItem.Text = "물품";
             this.물품ToolStripMenuItem.Click += new System.EventHandler(this.물품ToolStripMenuItem_Click);
             // 
+            // btnConCheck
+            // 
+            this.btnConCheck.Location = new System.Drawing.Point(266, 56);
+            this.btnConCheck.Name = "btnConCheck";
+            this.btnConCheck.Size = new System.Drawing.Size(134, 29);
+            this.btnConCheck.TabIndex = 7;
+            this.btnConCheck.Text = "button1";
+            this.btnConCheck.UseVisualStyleBackColor = true;
+            this.btnConCheck.Visible = false;
+            this.btnConCheck.Click += new System.EventHandler(this.btnConCheck_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 695);
+            this.Controls.Add(this.btnConCheck);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
@@ -90,6 +103,7 @@
             this.Text = "Form1";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -104,6 +118,7 @@
         private System.Windows.Forms.ToolStripMenuItem 직원ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 지역ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 물품ToolStripMenuItem;
+        private System.Windows.Forms.Button btnConCheck;
     }
 }
 

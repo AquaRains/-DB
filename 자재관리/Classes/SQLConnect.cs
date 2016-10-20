@@ -12,12 +12,18 @@ namespace 자재관리
 {
     class SQLConnect
     {
-        const string _server = "127.0.0.1";
-        const string _uid = "sa";
-        const string _pwd = "sapass";
-        const string _dbname = "자재관리DB";
-        
-
+        //접속에 관련된 기본 값 세팅
+#if DEBUG
+        const string _server = "suwoo1.database.windows.net";
+        const string _uid = "suwoo"; //현재 최고관리자 계정으로 세팅해놓았으니 조심해주세요...
+        const string _pwd = "LastArea7564";
+        const string _dbname = "db1"; 
+#else
+        const string _server = "suwoo1.database.windows.net";
+        const string _uid = "suwoo";
+        const string _pwd = "LastArea7564";
+        const string _dbname = "db1"; 
+#endif
 
 
         string ConnectionStr = "";
@@ -28,6 +34,7 @@ namespace 자재관리
         public DataTable mydatatable = new DataTable();
 
 
+        
         public SQLConnect()
         {
             ConnectionStr = string.Format("server={0} ; uid = {1} ; pwd = {2} ; database = {3}", _server, _uid, _pwd, _dbname);
@@ -35,9 +42,46 @@ namespace 자재관리
 
             Command = Connection.CreateCommand();
             Command.Connection = Connection;
-
-            
+  
         }
+
+        /// <summary>
+        /// DB와 접속이 가능한지 체크합니다 : Debug에서만 사용...
+        /// </summary>
+        /// <returns></returns>
+        public static bool ConnectionCheck()
+        {
+            string ConnectionStr = string.Format("server={0} ; uid = {1} ; pwd = {2} ; database = {3}", _server, _uid, _pwd, _dbname);
+            SqlConnection Connection = new SqlConnection(ConnectionStr);
+
+            SqlCommand Command = Connection.CreateCommand();
+            Command.Connection = Connection;
+  
+            bool state = false;
+            try
+            {
+                Connection.Open();
+                state = true;
+                System.Windows.Forms.MessageBox.Show("접속 가능");
+            }
+            catch (Exception ex)
+            {
+                state = false;
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (Connection.State == ConnectionState.Open) Connection.Close();
+            }
+
+            return state;
+
+        }
+
+        /// <summary>
+        /// SQL구문을 이용해서 adapter에 fill합니다. (보통 Table단위로 Select하게 됨)
+        /// </summary>
+        /// <param name="sql">SQL 구문 입력</param>
         public void SelectandFill(string sql)
         {
             Command.CommandText = sql;
@@ -45,6 +89,11 @@ namespace 자재관리
             adapter.Fill(mydatatable);
         }
 
+
+        /// <summary>
+        /// transact 혹은 sp 처리때 사용 할 예정
+        /// </summary>
+        /// <param name="sql">sql 구문</param>
         public void transactRun(string sql)
         {
  
