@@ -73,7 +73,7 @@
             // 
             // btnConCheck
             // 
-            this.btnConCheck.Location = new System.Drawing.Point(266, 56);
+            this.btnConCheck.Location = new System.Drawing.Point(0, 27);
             this.btnConCheck.Name = "btnConCheck";
             this.btnConCheck.Size = new System.Drawing.Size(134, 29);
             this.btnConCheck.TabIndex = 7;
