@@ -31,7 +31,7 @@ namespace 자재관리
         SqlCommand Command = new SqlCommand();
         SqlDataAdapter adapter;
         SqlCommandBuilder builder = new SqlCommandBuilder();
-        public DataTable mydatatable = new DataTable();
+        
 
 
         /// <summary>
@@ -84,11 +84,14 @@ namespace 자재관리
         /// SQL구문을 이용해서 adapter에 fill합니다. (보통 Table단위로 Select하게 됨)
         /// </summary>
         /// <param name="sql">SQL 구문 입력</param>
-        public void SelectandFill(string sql)
+        public DataTable SelectandFill(string sql)
         {
+            DataTable mydatatable = new DataTable();
             Command.CommandText = sql;
             adapter = new SqlDataAdapter(Command);
             adapter.Fill(mydatatable);
+
+            return mydatatable;
         }
 
 
@@ -98,7 +101,17 @@ namespace 자재관리
         /// <param name="sql">sql 구문</param>
         public void transactRun(string sql)
         {
- 
+            Command.CommandText = sql;
+            Connection.Open();
+            Command.ExecuteNonQuery();  // 단일문 실행용 메서드
+            Connection.Close();
+
+            
+        }
+
+        public DataTable sp_select(string sql)
+        {
+            DataTable mydatatable = new DataTable();
             SqlCommand cmd = new SqlCommand(sql);
             cmd = Connection.CreateCommand();
             cmd.CommandText = sql;
@@ -109,8 +122,7 @@ namespace 자재관리
 
             adapter.Fill(mydatatable);
             Connection.Close();
-
-            
+            return mydatatable;
         }
 
 

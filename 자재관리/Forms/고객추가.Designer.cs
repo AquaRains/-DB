@@ -105,6 +105,7 @@
             this.button3.TabIndex = 22;
             this.button3.Text = "삭제";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -136,9 +137,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(11, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(81, 12);
             this.label3.TabIndex = 18;
-            this.label3.Text = "주소";
+            this.label3.Text = "기타 메모사항";
             // 
             // label2
             // 

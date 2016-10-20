@@ -42,8 +42,7 @@ namespace 자재관리.Forms
         private void 품목추가_Load(object sender, EventArgs e)
         {
             connect = new SQLConnect();
-            connect.SelectandFill("SELECT * FROM 품목");
-            dt = connect.mydatatable;
+            dt = connect.SelectandFill("SELECT * FROM 품목");
             dataGridView1.DataSource = dt;
 
             txt품목명.DataBindings.Add("text",dt,dt.Columns[1].ColumnName);

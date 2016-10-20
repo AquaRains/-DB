@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB_Tables\customers.sql" />
+    <Content Include="SP\customers_update.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
