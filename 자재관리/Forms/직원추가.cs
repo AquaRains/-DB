@@ -123,9 +123,7 @@ namespace 자재관리.Forms
 
         private void button1_Click_1(object sender, System.EventArgs e)
         {
-            직원목록 목록 = 직원목록.instance;
-            목록.MdiParent = this.MdiParent;
-            목록.Show();
+
         }
 
 

@@ -53,29 +53,11 @@
     <Compile Include="Forms\거래실적.Designer.cs">
       <DependentUpon>거래실적.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\거래장부작성.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\거래장부작성.Designer.cs">
-      <DependentUpon>거래장부작성.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\고객추가.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\고객추가.Designer.cs">
       <DependentUpon>고객추가.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\지역.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\지역.Designer.cs">
-      <DependentUpon>지역.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\직원목록.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\직원목록.Designer.cs">
-      <DependentUpon>직원목록.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\직원추가.cs">
       <SubType>Form</SubType>
@@ -101,17 +83,8 @@
     <EmbeddedResource Include="Forms\거래실적.resx">
       <DependentUpon>거래실적.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\거래장부작성.resx">
-      <DependentUpon>거래장부작성.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\고객추가.resx">
       <DependentUpon>고객추가.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\지역.resx">
-      <DependentUpon>지역.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\직원목록.resx">
-      <DependentUpon>직원목록.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\직원추가.resx">
       <DependentUpon>직원추가.cs</DependentUpon>
@@ -144,7 +117,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DB_Tables\customers.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
