@@ -99,13 +99,14 @@ namespace 자재관리
 
 
         /// <summary>
-        /// transact 혹은 sp 처리때 사용 할 예정
+        /// stored procedure 호출합니다.
         /// </summary>
         /// <param name="sql">sql 구문</param>
         public void transactRun(string sql, SqlParameter[] parameters)
         {
             Command = new SqlCommand(sql,Connection);
             Command.CommandType = CommandType.StoredProcedure;
+            if (parameters.Length > 0)
             Command.Parameters.AddRange(parameters);
             Connection.Open();
             Command.ExecuteNonQuery(); 

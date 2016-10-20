@@ -9,6 +9,7 @@ namespace 자재관리.Forms
         SQLConnect dbconnect;
         DataTable dt = new DataTable("customers");
 
+        #region 생성자및 선언부
         static 고객추가 Thisform = null;
         static object _Thisform = new object();
         private 고객추가()
@@ -16,7 +17,7 @@ namespace 자재관리.Forms
             InitializeComponent();
             dbconnect = new SQLConnect();
         }
-        public static 고객추가 instance //doublecheck lock
+        public static 고객추가 instance //doublecheck lock singleton
         {
             get
             {
@@ -37,15 +38,13 @@ namespace 자재관리.Forms
 
 
             }
-        }
-
-
+        } 
+        #endregion
         private void 고객추가_Load(object sender, EventArgs e)
         {
             dtfill();
             dataGridView1.DataSource = dt;
             
-
             txt이름.DataBindings.Add("Text", dt,dt.Columns[1].ColumnName);
             txt대표자.DataBindings.Add("Text", dt, dt.Columns[2].ColumnName);
             txt전화번호.DataBindings.Add("Text", dt, dt.Columns[3].ColumnName);
@@ -54,56 +53,30 @@ namespace 자재관리.Forms
 
         }
         private void dtfill()
-        {
-            
-            
+        {     
                 dbconnect.SelectandFill("SELECT * FROM dbo.customers");
                 this.dt = dbconnect.datatable;
         }
-        /// <summary>
-        /// 닫기 버튼 클릭
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//닫기버튼
         {
             this.Close();
-        }
-
-        /// <summary>
-        /// 추가 버튼 클릭
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
+        } 
+        private void button2_Click(object sender, EventArgs e) //추가 버튼
         {
-            System.Data.SqlClient.SqlParameter[] parameters = {new System.Data.SqlClient.SqlParameter("customer_company", txt이름.Text),
-                                                                    new System.Data.SqlClient.SqlParameter("customer_name", txt대표자.Text),
-                                                                    new System.Data.SqlClient.SqlParameter("customer_phonenum", txt전화번호.Text),
+            System.Data.SqlClient.SqlParameter[] parameters =           new System.Data.SqlClient.SqlParameter("customer_name", txt대표자.Text),
+                                           {new System.Data.SqlClient.SqlParameter("customer_company", txt이름.Text),
+                                                                                   new System.Data.SqlClient.SqlParameter("customer_phonenum", txt전화번호.Text),
                                                                     new System.Data.SqlClient.SqlParameter("memo", txt메모.Text)};
-            
-
             dbconnect.transactRun("customers_insert", parameters);
-
-            // dbconnect.Command.Parameters.AddWithValue();
         }
-
-
-        /// <summary>
-        /// 삭제 버튼 클릭
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)// 삭제 버튼
         {
             
             System.Data.SqlClient.SqlParameter[] parameters = {new System.Data.SqlClient.SqlParameter("customer_company", txt이름.Text),
                                                                     new System.Data.SqlClient.SqlParameter("customer_name", txt대표자.Text),
                                                                     new System.Data.SqlClient.SqlParameter("customer_phonenum", txt전화번호.Text),
                                                                    };
-
             dbconnect.transactRun("customers_delete", parameters);
         }
-
     }
 }
