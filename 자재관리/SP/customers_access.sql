@@ -22,7 +22,7 @@ end
 
 go
 
-create procedure [dbo].customers_insert(
+create procedure [dbo].[customers_insert](
 @customer_company nvarchar(25),
 @customer_name nvarchar(10),
 @customer_phonenum nvarchar(25),
@@ -43,7 +43,6 @@ as
 	@memo
 	)
 end
-
 go
 
 

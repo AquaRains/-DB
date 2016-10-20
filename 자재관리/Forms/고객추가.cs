@@ -42,7 +42,7 @@ namespace 자재관리.Forms
 
         private void 고객추가_Load(object sender, EventArgs e)
         {
-            this.dt = dbconnect.SelectandFill("SELECT * FROM dbo.customers");
+            dtfill();
             dataGridView1.DataSource = dt;
             
 
@@ -52,6 +52,13 @@ namespace 자재관리.Forms
             txt메모.DataBindings.Add("Text", dt, dt.Columns[4].ColumnName);
 
 
+        }
+        private void dtfill()
+        {
+            
+            
+                dbconnect.SelectandFill("SELECT * FROM dbo.customers");
+                this.dt = dbconnect.datatable;
         }
         /// <summary>
         /// 닫기 버튼 클릭
@@ -70,13 +77,14 @@ namespace 자재관리.Forms
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            System.Data.SqlClient.SqlParameter[] parameters = {new System.Data.SqlClient.SqlParameter("@customer_compnay", txt이름.Text),
-                                                                    new System.Data.SqlClient.SqlParameter("@customer_name", txt대표자.Text),
-                                                                    new System.Data.SqlClient.SqlParameter("@customer_phonenum", txt전화번호.Text),
-                                                                    new System.Data.SqlClient.SqlParameter("@memo", txt메모.Text)};
+            System.Data.SqlClient.SqlParameter[] parameters = {new System.Data.SqlClient.SqlParameter("customer_company", txt이름.Text),
+                                                                    new System.Data.SqlClient.SqlParameter("customer_name", txt대표자.Text),
+                                                                    new System.Data.SqlClient.SqlParameter("customer_phonenum", txt전화번호.Text),
+                                                                    new System.Data.SqlClient.SqlParameter("memo", txt메모.Text)};
+            
 
+            dbconnect.transactRun("customers_insert", parameters);
 
-            dbconnect.transactRun("exec customers_insert", parameters);
             // dbconnect.Command.Parameters.AddWithValue();
         }
 
@@ -88,8 +96,13 @@ namespace 자재관리.Forms
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-            Close();
+            
+            System.Data.SqlClient.SqlParameter[] parameters = {new System.Data.SqlClient.SqlParameter("customer_company", txt이름.Text),
+                                                                    new System.Data.SqlClient.SqlParameter("customer_name", txt대표자.Text),
+                                                                    new System.Data.SqlClient.SqlParameter("customer_phonenum", txt전화번호.Text),
+                                                                   };
 
+            dbconnect.transactRun("customers_delete", parameters);
         }
 
     }

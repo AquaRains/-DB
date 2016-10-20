@@ -30,7 +30,7 @@ namespace 자재관리
         SqlConnection Connection;
         public SqlCommand Command = new SqlCommand();
         public SqlDataAdapter adapter;
-        
+        public DataTable datatable;
         
 
 
@@ -84,14 +84,17 @@ namespace 자재관리
         /// SQL구문을 이용해서 adapter에 fill합니다. (보통 Table단위로 Select하게 됨)
         /// </summary>
         /// <param name="sql">SQL 구문 입력</param>
-        public DataTable SelectandFill(string sql)
+        public void SelectandFill(string sql)
         {
-            DataTable mydatatable = new DataTable();
+            datatable = new DataTable();
+            Command.CommandType = CommandType.Text;
             Command.CommandText = sql;
+            
             adapter = new SqlDataAdapter(Command);
-            adapter.Fill(mydatatable);
+            datatable.Clear();
+            adapter.Fill(datatable);
+  
 
-            return mydatatable;
         }
 
 
@@ -101,36 +104,33 @@ namespace 자재관리
         /// <param name="sql">sql 구문</param>
         public void transactRun(string sql, SqlParameter[] parameters)
         {
-            Command.CommandText = sql;
+            Command = new SqlCommand(sql,Connection);
+            Command.CommandType = CommandType.StoredProcedure;
             Command.Parameters.AddRange(parameters);
             Connection.Open();
             Command.ExecuteNonQuery(); 
             Connection.Close();
-
+            datatable.Clear();
+            adapter.Fill(datatable);
             
         }
 
+
         public void transactRun(string sql)
         {
+            
+            
+            Command = Connection.CreateCommand();
+            
             Command.CommandText = sql;
+            Command.CommandType = CommandType.Text;
             Connection.Open();
+            datatable.Clear();
             Command.ExecuteNonQuery();  // 단일문 실행용 메서드
-            Connection.Close();
-        }
-        public DataTable sp_select(string sql)
-        {
-            DataTable mydatatable = new DataTable();
-            SqlCommand cmd = new SqlCommand(sql);
-            cmd = Connection.CreateCommand();
-            cmd.CommandText = sql;
 
-            Connection.Open();
-            mydatatable.Clear();
-            cmd.ExecuteNonQuery();  // 단일문 실행용 메서드
-
-            adapter.Fill(mydatatable);
+            adapter.Fill(datatable);
             Connection.Close();
-            return mydatatable;
+            
         }
 
 
