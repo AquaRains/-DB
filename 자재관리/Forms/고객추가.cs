@@ -63,19 +63,22 @@ namespace 자재관리.Forms
         } 
         private void button2_Click(object sender, EventArgs e) //추가 버튼
         {
-            System.Data.SqlClient.SqlParameter[] parameters =           new System.Data.SqlClient.SqlParameter("customer_name", txt대표자.Text),
-                                           {new System.Data.SqlClient.SqlParameter("customer_company", txt이름.Text),
-                                                                                   new System.Data.SqlClient.SqlParameter("customer_phonenum", txt전화번호.Text),
-                                                                    new System.Data.SqlClient.SqlParameter("memo", txt메모.Text)};
+            System.Data.SqlClient.SqlParameterCollection parameters = new System.Data.SqlClient.SqlParameterCollection();
+            parameters.Add(new System.Data.SqlClient.SqlParameter("customer_name", txt대표자.Text));
+            parameters.Add(new System.Data.SqlClient.SqlParameter("customer_company", txt이름.Text));
+            parameters.Add(new System.Data.SqlClient.SqlParameter("customer_phonenum", txt전화번호.Text));
+            parameters.Add(new System.Data.SqlClient.SqlParameter("memo", txt메모.Text));
+
             dbconnect.transactRun("customers_insert", parameters);
         }
         private void button3_Click(object sender, EventArgs e)// 삭제 버튼
         {
-            
-            System.Data.SqlClient.SqlParameter[] parameters = {new System.Data.SqlClient.SqlParameter("customer_company", txt이름.Text),
-                                                                    new System.Data.SqlClient.SqlParameter("customer_name", txt대표자.Text),
-                                                                    new System.Data.SqlClient.SqlParameter("customer_phonenum", txt전화번호.Text),
-                                                                   };
+
+            System.Data.SqlClient.SqlParameterCollection parameters = new System.Data.SqlClient.SqlParameterCollection();
+            parameters.Add(new System.Data.SqlClient.SqlParameter("customer_name", txt대표자.Text));
+            parameters.Add(new System.Data.SqlClient.SqlParameter("customer_company", txt이름.Text));
+            parameters.Add(new System.Data.SqlClient.SqlParameter("customer_phonenum", txt전화번호.Text));
+
             dbconnect.transactRun("customers_delete", parameters);
         }
     }

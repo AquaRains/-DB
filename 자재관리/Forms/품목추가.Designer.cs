@@ -42,8 +42,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt품목명 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -53,16 +55,18 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 91);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 84);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(699, 475);
+            this.dataGridView1.Size = new System.Drawing.Size(730, 526);
             this.dataGridView1.TabIndex = 13;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.chk취급주의);
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label6);
@@ -73,16 +77,17 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txt품목명);
-            this.groupBox1.Location = new System.Drawing.Point(12, 2);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(584, 79);
+            this.groupBox1.Size = new System.Drawing.Size(730, 75);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
             // chk취급주의
             // 
             this.chk취급주의.AutoSize = true;
-            this.chk취급주의.Location = new System.Drawing.Point(378, 50);
+            this.chk취급주의.Location = new System.Drawing.Point(378, 48);
             this.chk취급주의.Name = "chk취급주의";
             this.chk취급주의.Size = new System.Drawing.Size(72, 16);
             this.chk취급주의.TabIndex = 31;
@@ -143,7 +148,7 @@
             // 
             // txt가격
             // 
-            this.txt가격.Location = new System.Drawing.Point(75, 48);
+            this.txt가격.Location = new System.Drawing.Point(75, 46);
             this.txt가격.Name = "txt가격";
             this.txt가격.Size = new System.Drawing.Size(116, 21);
             this.txt가격.TabIndex = 21;
@@ -151,7 +156,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 51);
+            this.label3.Location = new System.Drawing.Point(40, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 20;
@@ -176,22 +181,36 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(602, 16);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.Location = new System.Drawing.Point(619, 17);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 54);
+            this.button3.Size = new System.Drawing.Size(108, 55);
             this.button3.TabIndex = 30;
             this.button3.Text = "닫기";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.37683F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.62316F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(736, 613);
+            this.tableLayoutPanel1.TabIndex = 15;
+            // 
             // 품목추가
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 579);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(736, 613);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "품목추가";
             this.Text = "품목추가";
@@ -199,6 +218,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -219,5 +239,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt품목명;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

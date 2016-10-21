@@ -109,7 +109,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DB_Tables\empolyee.sql" />
     <Content Include="DB_Tables\customers.sql" />
+    <Content Include="DB_Tables\products.sql" />
+    <Content Include="SP\empolyee_access.sql" />
     <Content Include="SP\customers_access.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

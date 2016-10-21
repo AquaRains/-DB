@@ -30,61 +30,45 @@
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btn닫기 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt전번 = new System.Windows.Forms.TextBox();
+            this.btn닫기 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn저장 = new System.Windows.Forms.Button();
+            this.btn삭제 = new System.Windows.Forms.Button();
             this.lb비고 = new System.Windows.Forms.Label();
             this.btn신규 = new System.Windows.Forms.Button();
             this.txt비고 = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txt이름 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt주민 = new System.Windows.Forms.TextBox();
             this.lbl현주소 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt면허 = new System.Windows.Forms.TextBox();
             this.txt현주소 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt경력 = new System.Windows.Forms.TextBox();
-            this.txt전번 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
             // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(12, 31);
+            this.listBox1.Location = new System.Drawing.Point(0, 22);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(87, 448);
+            this.listBox1.Size = new System.Drawing.Size(100, 340);
             this.listBox1.TabIndex = 8;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 18);
+            this.label12.Location = new System.Drawing.Point(7, 6);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 12);
             this.label12.TabIndex = 23;
             this.label12.Text = "목록";
-            // 
-            // btn닫기
-            // 
-            this.btn닫기.Location = new System.Drawing.Point(706, 18);
-            this.btn닫기.Name = "btn닫기";
-            this.btn닫기.Size = new System.Drawing.Size(87, 44);
-            this.btn닫기.TabIndex = 25;
-            this.btn닫기.Text = "닫기";
-            this.btn닫기.UseVisualStyleBackColor = true;
-            this.btn닫기.Click += new System.EventHandler(this.button2_Click);
             // 
             // openFileDialog1
             // 
@@ -93,51 +77,62 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txt전번);
+            this.groupBox1.Controls.Add(this.btn닫기);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.btn저장);
+            this.groupBox1.Controls.Add(this.btn삭제);
             this.groupBox1.Controls.Add(this.lb비고);
             this.groupBox1.Controls.Add(this.btn신규);
             this.groupBox1.Controls.Add(this.txt비고);
             this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.txt이름);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txt주민);
             this.groupBox1.Controls.Add(this.lbl현주소);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txt면허);
             this.groupBox1.Controls.Add(this.txt현주소);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txt경력);
-            this.groupBox1.Controls.Add(this.txt전번);
-            this.groupBox1.Location = new System.Drawing.Point(105, 11);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox1.Location = new System.Drawing.Point(90, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(594, 468);
+            this.groupBox1.Size = new System.Drawing.Size(574, 362);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             // 
-            // button1
+            // label3
             // 
-            this.button1.Location = new System.Drawing.Point(383, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 27);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "목록으로 보기";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.TabIndex = 57;
+            this.label3.Text = "전화번호";
+            // 
+            // txt전번
+            // 
+            this.txt전번.Location = new System.Drawing.Point(76, 76);
+            this.txt전번.Name = "txt전번";
+            this.txt전번.Size = new System.Drawing.Size(124, 21);
+            this.txt전번.TabIndex = 56;
+            // 
+            // btn닫기
+            // 
+            this.btn닫기.Location = new System.Drawing.Point(480, 18);
+            this.btn닫기.Name = "btn닫기";
+            this.btn닫기.Size = new System.Drawing.Size(79, 44);
+            this.btn닫기.TabIndex = 55;
+            this.btn닫기.Text = "닫기";
+            this.btn닫기.UseVisualStyleBackColor = true;
+            this.btn닫기.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(211, 17);
+            this.label8.Location = new System.Drawing.Point(623, 190);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 54;
             this.label8.Text = "사진";
+            this.label8.Visible = false;
             // 
             // label1
             // 
@@ -148,29 +143,20 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "일련번호";
             // 
-            // pictureBox1
+            // btn삭제
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(213, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 123);
-            this.pictureBox1.TabIndex = 53;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btn저장
-            // 
-            this.btn저장.Location = new System.Drawing.Point(480, 59);
-            this.btn저장.Name = "btn저장";
-            this.btn저장.Size = new System.Drawing.Size(79, 44);
-            this.btn저장.TabIndex = 51;
-            this.btn저장.Text = "삭제";
-            this.btn저장.UseVisualStyleBackColor = true;
+            this.btn삭제.Location = new System.Drawing.Point(355, 18);
+            this.btn삭제.Name = "btn삭제";
+            this.btn삭제.Size = new System.Drawing.Size(79, 44);
+            this.btn삭제.TabIndex = 51;
+            this.btn삭제.Text = "삭제";
+            this.btn삭제.UseVisualStyleBackColor = true;
+            this.btn삭제.Click += new System.EventHandler(this.btn삭제_Click);
             // 
             // lb비고
             // 
             this.lb비고.AutoSize = true;
-            this.lb비고.Location = new System.Drawing.Point(41, 236);
+            this.lb비고.Location = new System.Drawing.Point(41, 144);
             this.lb비고.Name = "lb비고";
             this.lb비고.Size = new System.Drawing.Size(29, 12);
             this.lb비고.TabIndex = 50;
@@ -178,16 +164,17 @@
             // 
             // btn신규
             // 
-            this.btn신규.Location = new System.Drawing.Point(383, 59);
+            this.btn신규.Location = new System.Drawing.Point(261, 18);
             this.btn신규.Name = "btn신규";
             this.btn신규.Size = new System.Drawing.Size(79, 44);
             this.btn신규.TabIndex = 52;
             this.btn신규.Text = "신규";
             this.btn신규.UseVisualStyleBackColor = true;
+            this.btn신규.Click += new System.EventHandler(this.btn신규_Click);
             // 
             // txt비고
             // 
-            this.txt비고.Location = new System.Drawing.Point(76, 233);
+            this.txt비고.Location = new System.Drawing.Point(76, 141);
             this.txt비고.Multiline = true;
             this.txt비고.Name = "txt비고";
             this.txt비고.Size = new System.Drawing.Size(483, 209);
@@ -217,95 +204,39 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "성명";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "생년월일";
-            // 
-            // txt주민
-            // 
-            this.txt주민.Location = new System.Drawing.Point(76, 88);
-            this.txt주민.Name = "txt주민";
-            this.txt주민.Size = new System.Drawing.Size(120, 21);
-            this.txt주민.TabIndex = 34;
-            // 
             // lbl현주소
             // 
             this.lbl현주소.AutoSize = true;
-            this.lbl현주소.Location = new System.Drawing.Point(29, 191);
+            this.lbl현주소.Location = new System.Drawing.Point(29, 106);
             this.lbl현주소.Name = "lbl현주소";
             this.lbl현주소.Size = new System.Drawing.Size(41, 12);
             this.lbl현주소.TabIndex = 44;
             this.lbl현주소.Text = "현주소";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(324, 133);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "면허번호";
-            // 
-            // txt면허
-            // 
-            this.txt면허.Location = new System.Drawing.Point(383, 128);
-            this.txt면허.Name = "txt면허";
-            this.txt면허.Size = new System.Drawing.Size(176, 21);
-            this.txt면허.TabIndex = 36;
-            // 
             // txt현주소
             // 
-            this.txt현주소.Location = new System.Drawing.Point(76, 188);
+            this.txt현주소.Location = new System.Drawing.Point(76, 103);
             this.txt현주소.Name = "txt현주소";
             this.txt현주소.Size = new System.Drawing.Size(483, 21);
             this.txt현주소.TabIndex = 42;
             // 
-            // label5
+            // panel1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "전화번호";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(348, 158);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "경력";
-            // 
-            // txt경력
-            // 
-            this.txt경력.Location = new System.Drawing.Point(383, 155);
-            this.txt경력.Name = "txt경력";
-            this.txt경력.Size = new System.Drawing.Size(108, 21);
-            this.txt경력.TabIndex = 40;
-            // 
-            // txt전번
-            // 
-            this.txt전번.Location = new System.Drawing.Point(76, 115);
-            this.txt전번.Name = "txt전번";
-            this.txt전번.Size = new System.Drawing.Size(120, 21);
-            this.txt전번.TabIndex = 39;
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(100, 362);
+            this.panel1.TabIndex = 27;
             // 
             // 직원추가
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 492);
+            this.ClientSize = new System.Drawing.Size(664, 362);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btn닫기);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -313,42 +244,35 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "직원등록/수정";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.직원추가_FormClosed);
+
             this.Load += new System.EventHandler(this.직원추가_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btn닫기;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn저장;
+        private System.Windows.Forms.Button btn삭제;
         private System.Windows.Forms.Label lb비고;
         private System.Windows.Forms.Button btn신규;
         private System.Windows.Forms.TextBox txt비고;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txt이름;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt주민;
         private System.Windows.Forms.Label lbl현주소;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt면허;
         private System.Windows.Forms.TextBox txt현주소;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt경력;
+        private System.Windows.Forms.Button btn닫기;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt전번;
-        private System.Windows.Forms.Button button1;
     }
 }

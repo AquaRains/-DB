@@ -46,7 +46,6 @@ namespace 자재관리
             Command.Connection = Connection;
   
         }
-
         /// <summary>
         /// DB와 접속이 가능한지 체크합니다 : Debug에서만 사용...
         /// </summary>
@@ -79,7 +78,6 @@ namespace 자재관리
             return state;
 
         }
-
         /// <summary>
         /// SQL구문을 이용해서 adapter에 fill합니다. (보통 Table단위로 Select하게 됨)
         /// </summary>
@@ -96,18 +94,17 @@ namespace 자재관리
   
 
         }
-
-
         /// <summary>
         /// stored procedure 호출합니다.
         /// </summary>
         /// <param name="sql">sql 구문</param>
-        public void transactRun(string sql, SqlParameter[] parameters)
+        /// <param name="parameters">sp에 쓰일 매개 변수 값 집합을 나타냅니다.</param>
+        public void transactRun(string sql, SqlParameterCollection parameters)
         {
             Command = new SqlCommand(sql,Connection);
             Command.CommandType = CommandType.StoredProcedure;
-            if (parameters.Length > 0)
-            Command.Parameters.AddRange(parameters);
+            if (parameters.Count > 0)
+            Command.Parameters.Add(parameters);
             Connection.Open();
             Command.ExecuteNonQuery(); 
             Connection.Close();
@@ -115,23 +112,25 @@ namespace 자재관리
             adapter.Fill(datatable);
             
         }
-
-
-        public void transactRun(string sql)
+        /// <summary>
+        /// 단순 SQL 구문을 실행합니다
+        /// </summary>
+        /// <param name="sql">실행할 sql 구문</param>
+        /// <param name="Datarefill">이 인스턴스의 datatable을 refresh할 것인지 여부를 결정합니다.</param>
+        public void transactRun(string sql,bool Datarefill)
         {
-            
-            
-            Command = Connection.CreateCommand();
-            
             Command.CommandText = sql;
             Command.CommandType = CommandType.Text;
             Connection.Open();
-            datatable.Clear();
-            Command.ExecuteNonQuery();  // 단일문 실행용 메서드
-
-            adapter.Fill(datatable);
-            Connection.Close();
             
+            Command.ExecuteNonQuery();  // 단일문 실행용 메서드
+            if (Datarefill)
+            {
+                datatable.Clear();
+                adapter.Fill(datatable);
+            }
+            Connection.Close();
+
         }
 
 

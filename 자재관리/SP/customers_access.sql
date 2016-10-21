@@ -1,7 +1,6 @@
 ﻿
 
 -- 그냥 저장용임 실제론 이걸로 작동하는 게 아닙니다.
-
 CREATE PROCEDURE [dbo].[customers_update](
 @customer_id int,
 @customer_company nvarchar(25),

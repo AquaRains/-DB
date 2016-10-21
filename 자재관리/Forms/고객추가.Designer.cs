@@ -51,7 +51,7 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(650, 42);
+            this.button1.Size = new System.Drawing.Size(685, 42);
             this.button1.TabIndex = 0;
             this.button1.Text = "닫기";
             this.button1.UseVisualStyleBackColor = true;
@@ -69,7 +69,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(650, 526);
+            this.dataGridView1.Size = new System.Drawing.Size(685, 526);
             this.dataGridView1.TabIndex = 1;
             // 
             // groupBox1
@@ -88,7 +88,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(650, 115);
+            this.groupBox1.Size = new System.Drawing.Size(685, 115);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 689);
+            this.ClientSize = new System.Drawing.Size(685, 689);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);

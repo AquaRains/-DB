@@ -1,6 +1,7 @@
 ﻿using System;
 
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace 자재관리.Forms
 {
@@ -62,14 +63,12 @@ namespace 자재관리.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            connect.transactRun(string.Format("INSERT INTO 품목 ({0},{1},{2},{3}) VALUES ('{4}','{5}','{6}',{7})",
-                                                dt.Columns[1].ColumnName,
-                                                dt.Columns[2].ColumnName,
-                                                dt.Columns[3].ColumnName,
-                                                dt.Columns[4].ColumnName,
-                                                txt품목명.Text, txt제조회사.Text, txt가격.Text, chk취급주의.Checked?1:0
-                                                 ));
-
+            SqlParameterCollection parameters = new SqlParameterCollection();
+                parameters.Add(new SqlParameter(dt.Columns[1].ColumnName,txt품목명.Text));
+                parameters.Add(new SqlParameter(dt.Columns[2].ColumnName, txt제조회사.Text));
+                parameters.Add(new SqlParameter(dt.Columns[3].ColumnName, txt가격.Text));
+                parameters.Add(new SqlParameter(dt.Columns[4].ColumnName, chk취급주의.Checked ? 1 : 0));
+                connect.transactRun("",parameters);
         }
 
         private void button2_Click(object sender, EventArgs e)
