@@ -5,5 +5,4 @@
     [customer_phonenum] NVARCHAR (25) NOT NULL,
     [memo] NVARCHAR(MAX) NULL, 
     PRIMARY KEY CLUSTERED ([customer_id] ASC)
-
-	)
+)
