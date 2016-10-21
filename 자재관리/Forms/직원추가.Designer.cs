@@ -30,7 +30,6 @@
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt전번 = new System.Windows.Forms.TextBox();
@@ -69,11 +68,6 @@
             this.label12.Size = new System.Drawing.Size(29, 12);
             this.label12.TabIndex = 23;
             this.label12.Text = "목록";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "이미지 파일|*.jpg;*.jpeg;*.bmp;*.png";
             // 
             // groupBox1
             // 
@@ -256,7 +250,6 @@
         #endregion
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;

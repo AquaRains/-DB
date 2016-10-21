@@ -59,5 +59,12 @@ namespace 자재관리
             form.Show();
 
         }
+
+        private void 장부작성ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.입출고등록 form = Forms.입출고등록.instance;
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }
