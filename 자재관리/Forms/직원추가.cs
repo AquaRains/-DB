@@ -9,7 +9,7 @@ namespace 자재관리.Forms
     {
         static 직원추가 thisform = null;
         static object _thisform = new object();
-        DataRow curruntrow;
+
 
         SQLConnect connect = new SQLConnect();
         DataTable dt = new DataTable();
@@ -58,16 +58,19 @@ namespace 자재관리.Forms
         private void 직원추가_Load(object sender, System.EventArgs e)
         {
 
-            connect.SelectandFill("SELECT * FROM dbo.empolyee");
+            connect.SelectandFill("SELECT * FROM employee");
             this.dt = connect.datatable;
+            dt.TableName = "employee";
 
-            listBox1.DataBindings.Add("DataSource", dt, dt.TableName);
-            listBox1.DataBindings.Add("DisplayMember",dt,"empolyee_Name");
-            txtID.DataBindings.Add("Text", dt, "empolyee_ID");
-            txt이름.DataBindings.Add("Text", dt, "empolyee_Name");
-            txt전번.DataBindings.Add("Text", dt, "empolyee_Phone");
-            txt현주소.DataBindings.Add("Text", dt, "empolyee_address");
-            txt비고.DataBindings.Add("Text", dt, "empolyee_extr");
+            listBox1.DataSource = dt;
+            listBox1.DisplayMember = "employee_Name";
+          //  listBox1.DataBindings.Add("DataSource", dt, dt.TableName);
+           // listBox1.DataBindings.Add("DisplayMember",dt,"employee_Name");
+            txtID.DataBindings.Add("Text", dt, "employee_ID");
+            txt이름.DataBindings.Add("Text", dt, "employee_Name");
+            txt전번.DataBindings.Add("Text", dt, "employee_Phone");
+            txt현주소.DataBindings.Add("Text", dt, "employee_address");
+            txt비고.DataBindings.Add("Text", dt, "employee_extr");
             //pictureBox1.DataBindings.Add("Image", dt, "image");                                                                                                                                                                                                                       
 
            listBox1.Refresh();
@@ -82,20 +85,20 @@ namespace 자재관리.Forms
 
         private void btn삭제_Click(object sender, System.EventArgs e)
         {
-            System.Data.SqlClient.SqlParameterCollection parameters = new System.Data.SqlClient.SqlParameterCollection();
-            parameters.Add(new System.Data.SqlClient.SqlParameter("empolyee_ID", listBox1.SelectedIndex));
-            connect.transactRun("empolyee_delete", parameters);
+            System.Data.SqlClient.SqlParameterCollection parameters = connect.Command.Parameters;
+            parameters.Add(new System.Data.SqlClient.SqlParameter("employee_ID", txtID.Text));
+            connect.transactRun("employee_delete");
         }
 
         private void btn신규_Click(object sender, System.EventArgs e)
         {
-            System.Data.SqlClient.SqlParameterCollection parameters = new System.Data.SqlClient.SqlParameterCollection(); 
-            parameters.Add(new System.Data.SqlClient.SqlParameter("empolyee_Name",txt이름.Text));
-            parameters.Add(new System.Data.SqlClient.SqlParameter("empolyee_Phone",txt전번.Text));
-            parameters.Add(new System.Data.SqlClient.SqlParameter("empolyee_address",txt현주소.Text));
-            parameters.Add(new System.Data.SqlClient.SqlParameter("empolyee_extr", txt비고.Text));
+            System.Data.SqlClient.SqlParameterCollection parameters = connect.Command.Parameters; 
+            parameters.Add(new System.Data.SqlClient.SqlParameter("employee_Name",txt이름.Text));
+            parameters.Add(new System.Data.SqlClient.SqlParameter("employee_Phone",txt전번.Text));
+            parameters.Add(new System.Data.SqlClient.SqlParameter("employee_address",txt현주소.Text));
+            parameters.Add(new System.Data.SqlClient.SqlParameter("employee_extr", txt비고.Text));
            
-            connect.transactRun("empolyee_insert",parameters);
+            connect.transactRun("employee_insert");
         }
 
 

@@ -31,7 +31,7 @@ namespace 자재관리
         public SqlCommand Command = new SqlCommand();
         public SqlDataAdapter adapter;
         public DataTable datatable;
-        
+        private SqlCommand selectcommand = new SqlCommand();
 
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace 자재관리
             datatable = new DataTable();
             Command.CommandType = CommandType.Text;
             Command.CommandText = sql;
-            
-            adapter = new SqlDataAdapter(Command);
+            selectcommand = Command.Clone();
+            adapter = new SqlDataAdapter(selectcommand);
             datatable.Clear();
             adapter.Fill(datatable);
   
@@ -99,18 +99,17 @@ namespace 자재관리
         /// </summary>
         /// <param name="sql">sql 구문</param>
         /// <param name="parameters">sp에 쓰일 매개 변수 값 집합을 나타냅니다.</param>
-        public void transactRun(string sql, SqlParameterCollection parameters)
-        {
-            Command = new SqlCommand(sql,Connection);
+        public void transactRun(string sql)
+        {;
+            Command.CommandText = sql;
             Command.CommandType = CommandType.StoredProcedure;
-            if (parameters.Count > 0)
-            Command.Parameters.Add(parameters);
+
             Connection.Open();
             Command.ExecuteNonQuery(); 
             Connection.Close();
-            datatable.Clear();
-            adapter.Fill(datatable);
-            
+           datatable.Clear();
+           adapter.Fill(datatable);
+           Command.Parameters.Clear();
         }
         /// <summary>
         /// 단순 SQL 구문을 실행합니다

@@ -31,6 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chk취급주의 = new System.Windows.Forms.CheckBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -41,8 +42,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt품목명 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txt종류 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -65,6 +67,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txt종류);
             this.groupBox1.Controls.Add(this.chk취급주의);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -87,18 +91,29 @@
             // chk취급주의
             // 
             this.chk취급주의.AutoSize = true;
-            this.chk취급주의.Location = new System.Drawing.Point(378, 48);
+            this.chk취급주의.Location = new System.Drawing.Point(398, 46);
             this.chk취급주의.Name = "chk취급주의";
             this.chk취급주의.Size = new System.Drawing.Size(72, 16);
-            this.chk취급주의.TabIndex = 31;
+            this.chk취급주의.TabIndex = 6;
             this.chk취급주의.Text = "취급주의";
             this.chk취급주의.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.Location = new System.Drawing.Point(619, 17);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(108, 55);
+            this.button3.TabIndex = 30;
+            this.button3.Text = "닫기";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(493, 44);
+            this.button2.Location = new System.Drawing.Point(499, 45);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(69, 27);
             this.button2.TabIndex = 29;
             this.button2.Text = "제거";
             this.button2.UseVisualStyleBackColor = true;
@@ -106,9 +121,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(493, 15);
+            this.button1.Location = new System.Drawing.Point(499, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(69, 27);
             this.button1.TabIndex = 28;
             this.button1.Text = "추가";
             this.button1.UseVisualStyleBackColor = true;
@@ -117,7 +132,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(319, 22);
+            this.label6.Location = new System.Drawing.Point(206, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 27;
@@ -125,22 +140,22 @@
             // 
             // txt제조회사
             // 
-            this.txt제조회사.Location = new System.Drawing.Point(378, 17);
+            this.txt제조회사.Location = new System.Drawing.Point(265, 17);
             this.txt제조회사.Name = "txt제조회사";
             this.txt제조회사.Size = new System.Drawing.Size(100, 21);
-            this.txt제조회사.TabIndex = 26;
+            this.txt제조회사.TabIndex = 2;
             // 
             // txt규격
             // 
-            this.txt규격.Location = new System.Drawing.Point(257, 17);
+            this.txt규격.Location = new System.Drawing.Point(414, 17);
             this.txt규격.Name = "txt규격";
             this.txt규격.Size = new System.Drawing.Size(56, 21);
-            this.txt규격.TabIndex = 24;
+            this.txt규격.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(222, 22);
+            this.label4.Location = new System.Drawing.Point(379, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 22;
@@ -151,7 +166,7 @@
             this.txt가격.Location = new System.Drawing.Point(75, 46);
             this.txt가격.Name = "txt가격";
             this.txt가격.Size = new System.Drawing.Size(116, 21);
-            this.txt가격.TabIndex = 21;
+            this.txt가격.TabIndex = 4;
             // 
             // label3
             // 
@@ -177,18 +192,7 @@
             this.txt품목명.Location = new System.Drawing.Point(75, 17);
             this.txt품목명.Name = "txt품목명";
             this.txt품목명.Size = new System.Drawing.Size(116, 21);
-            this.txt품목명.TabIndex = 18;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.Location = new System.Drawing.Point(619, 17);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 55);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "닫기";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.txt품목명.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
@@ -204,6 +208,22 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.62316F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(736, 613);
             this.tableLayoutPanel1.TabIndex = 15;
+            // 
+            // txt종류
+            // 
+            this.txt종류.Location = new System.Drawing.Point(265, 44);
+            this.txt종류.Name = "txt종류";
+            this.txt종류.Size = new System.Drawing.Size(100, 21);
+            this.txt종류.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(206, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "물품종류";
             // 
             // 품목추가
             // 
@@ -240,5 +260,7 @@
         private System.Windows.Forms.TextBox txt품목명;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt종류;
     }
 }

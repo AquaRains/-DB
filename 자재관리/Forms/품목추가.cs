@@ -42,16 +42,18 @@ namespace 자재관리.Forms
 
         private void 품목추가_Load(object sender, EventArgs e)
         {
-            /*
+           
             connect = new SQLConnect();
-            dt = connect.SelectandFill("SELECT * FROM 품목");
+           connect.SelectandFill("SELECT * FROM products");
+           dt = connect.datatable;
             dataGridView1.DataSource = dt;
 
-            txt품목명.DataBindings.Add("text",dt,dt.Columns[1].ColumnName);
-            txt제조회사.DataBindings.Add("text", dt, dt.Columns[2].ColumnName);
-            txt가격.DataBindings.Add("text", dt, dt.Columns[3].ColumnName);
-            chk취급주의.DataBindings.Add("Checked", dt, dt.Columns[4].ColumnName);
-             * */
+            txt품목명.DataBindings.Add("text",dt,"product_name");
+            txt제조회사.DataBindings.Add("text", dt, "product_company");
+            txt규격.DataBindings.Add("Text", dt, "product_scale");
+            txt가격.DataBindings.Add("text", dt, "product_price");
+            chk취급주의.DataBindings.Add("Checked", dt, "product_isdanger" );
+         
         }
 
 
@@ -63,17 +65,23 @@ namespace 자재관리.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlParameterCollection parameters = new SqlParameterCollection();
-                parameters.Add(new SqlParameter(dt.Columns[1].ColumnName,txt품목명.Text));
-                parameters.Add(new SqlParameter(dt.Columns[2].ColumnName, txt제조회사.Text));
-                parameters.Add(new SqlParameter(dt.Columns[3].ColumnName, txt가격.Text));
-                parameters.Add(new SqlParameter(dt.Columns[4].ColumnName, chk취급주의.Checked ? 1 : 0));
-                connect.transactRun("",parameters);
+            SqlParameterCollection parameters = connect.Command.Parameters;
+                parameters.Add(new SqlParameter("product_name",txt품목명.Text));
+                parameters.Add(new SqlParameter("product_company", txt제조회사.Text));
+                parameters.Add(new SqlParameter("product_type", txt종류.Text));
+                parameters.Add(new SqlParameter("product_scale", txt규격.Text));
+                parameters.Add(new SqlParameter("product_price", txt가격.Text));
+                parameters.Add(new SqlParameter("product_isdanger", chk취급주의.Checked ? 1 : 0));
+                connect.transactRun("products_insert");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            int? index = dataGridView1.SelectedColumns[0].DisplayIndex;
 
+            SqlParameterCollection parameters = connect.Command.Parameters;
+            parameters.Add(new SqlParameter("product_id", index));
+            connect.transactRun("products_delete");
         }
     }
 }

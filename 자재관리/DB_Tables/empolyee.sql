@@ -1,8 +1,10 @@
-﻿CREATE TABLE [dbo].empolyee
-(
-	empolyee_ID INT NOT NULL PRIMARY KEY,
-	empolyee_Name nvarchar(10) not null,
-	empolyee_Phone varchar(20),
-	empolyee_address nvarchar(50),
-	empolyee_extr nvarchar(50)
-)
+﻿
+CREATE TABLE [dbo].[employee] (
+    [employee_ID]      INT           IDENTITY (1, 1) NOT NULL,
+    [employee_Name]    NVARCHAR (10) NOT NULL,
+    [employee_Phone]   VARCHAR (20)  NULL,
+    [employee_address] NVARCHAR (50) NULL,
+    [employee_extr]    NVARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([employee_ID] ASC)
+);
+

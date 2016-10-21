@@ -32,8 +32,8 @@
             this.닫기XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.직원ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.물품ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnConCheck = new System.Windows.Forms.Button();
             this.고객ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnConCheck = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,23 +71,23 @@
             this.물품ToolStripMenuItem.Text = "물품";
             this.물품ToolStripMenuItem.Click += new System.EventHandler(this.물품ToolStripMenuItem_Click);
             // 
-            // btnConCheck
-            // 
-            this.btnConCheck.Location = new System.Drawing.Point(0, 27);
-            this.btnConCheck.Name = "btnConCheck";
-            this.btnConCheck.Size = new System.Drawing.Size(134, 29);
-            this.btnConCheck.TabIndex = 7;
-            this.btnConCheck.Text = "접속 체크";
-            this.btnConCheck.UseVisualStyleBackColor = true;
-            this.btnConCheck.Visible = false;
-            this.btnConCheck.Click += new System.EventHandler(this.btnConCheck_Click);
-            // 
             // 고객ToolStripMenuItem
             // 
             this.고객ToolStripMenuItem.Name = "고객ToolStripMenuItem";
             this.고객ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.고객ToolStripMenuItem.Text = "고객";
             this.고객ToolStripMenuItem.Click += new System.EventHandler(this.고객ToolStripMenuItem_Click);
+            // 
+            // btnConCheck
+            // 
+            this.btnConCheck.Location = new System.Drawing.Point(1013, 0);
+            this.btnConCheck.Name = "btnConCheck";
+            this.btnConCheck.Size = new System.Drawing.Size(79, 24);
+            this.btnConCheck.TabIndex = 7;
+            this.btnConCheck.Text = "접속 체크";
+            this.btnConCheck.UseVisualStyleBackColor = true;
+            this.btnConCheck.Visible = false;
+            this.btnConCheck.Click += new System.EventHandler(this.btnConCheck_Click);
             // 
             // MainForm
             // 

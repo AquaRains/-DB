@@ -59,7 +59,7 @@
             this.listBox1.Location = new System.Drawing.Point(0, 22);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(100, 340);
-            this.listBox1.TabIndex = 8;
+            this.listBox1.TabIndex = 1;
             // 
             // label12
             // 
@@ -112,7 +112,7 @@
             this.txt전번.Location = new System.Drawing.Point(76, 76);
             this.txt전번.Name = "txt전번";
             this.txt전번.Size = new System.Drawing.Size(124, 21);
-            this.txt전번.TabIndex = 56;
+            this.txt전번.TabIndex = 3;
             // 
             // btn닫기
             // 
@@ -167,7 +167,7 @@
             this.btn신규.Location = new System.Drawing.Point(261, 18);
             this.btn신규.Name = "btn신규";
             this.btn신규.Size = new System.Drawing.Size(79, 44);
-            this.btn신규.TabIndex = 52;
+            this.btn신규.TabIndex = 6;
             this.btn신규.Text = "신규";
             this.btn신규.UseVisualStyleBackColor = true;
             this.btn신규.Click += new System.EventHandler(this.btn신규_Click);
@@ -178,7 +178,7 @@
             this.txt비고.Multiline = true;
             this.txt비고.Name = "txt비고";
             this.txt비고.Size = new System.Drawing.Size(483, 209);
-            this.txt비고.TabIndex = 49;
+            this.txt비고.TabIndex = 5;
             // 
             // txtID
             // 
@@ -193,7 +193,7 @@
             this.txt이름.Location = new System.Drawing.Point(76, 47);
             this.txt이름.Name = "txt이름";
             this.txt이름.Size = new System.Drawing.Size(100, 21);
-            this.txt이름.TabIndex = 31;
+            this.txt이름.TabIndex = 2;
             // 
             // label2
             // 
@@ -218,7 +218,7 @@
             this.txt현주소.Location = new System.Drawing.Point(76, 103);
             this.txt현주소.Name = "txt현주소";
             this.txt현주소.Size = new System.Drawing.Size(483, 21);
-            this.txt현주소.TabIndex = 42;
+            this.txt현주소.TabIndex = 4;
             // 
             // panel1
             // 
@@ -244,7 +244,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "직원등록/수정";
-
             this.Load += new System.EventHandler(this.직원추가_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
