@@ -30,20 +30,24 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.닫기XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.지역ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.직원ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.물품ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.고객ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnConCheck = new System.Windows.Forms.Button();
+            this.장부작성ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marqueeProgressBarControl1 = new DevExpress.XtraEditors.MarqueeProgressBarControl();
             this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.marqueeProgressBarControl1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.닫기XToolStripMenuItem,
-            this.지역ToolStripMenuItem,
-            this.물품ToolStripMenuItem});
+            this.직원ToolStripMenuItem,
+            this.물품ToolStripMenuItem,
+            this.고객ToolStripMenuItem,
+            this.장부작성ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1092, 24);
@@ -57,12 +61,12 @@
             this.닫기XToolStripMenuItem.Text = "닫기(&X)";
             this.닫기XToolStripMenuItem.Click += new System.EventHandler(this.닫기XToolStripMenuItem_Click);
             // 
-            // 지역ToolStripMenuItem
+            // 직원ToolStripMenuItem
             // 
-            this.지역ToolStripMenuItem.Name = "지역ToolStripMenuItem";
-            this.지역ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.지역ToolStripMenuItem.Text = "지역";
-            this.지역ToolStripMenuItem.Click += new System.EventHandler(this.지역추가ToolStripMenuItem_Click);
+            this.직원ToolStripMenuItem.Name = "직원ToolStripMenuItem";
+            this.직원ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.직원ToolStripMenuItem.Text = "직원";
+            this.직원ToolStripMenuItem.Click += new System.EventHandler(this.직원ToolStripMenuItem_Click);
             // 
             // 물품ToolStripMenuItem
             // 
@@ -71,44 +75,57 @@
             this.물품ToolStripMenuItem.Text = "물품";
             this.물품ToolStripMenuItem.Click += new System.EventHandler(this.물품ToolStripMenuItem_Click);
             // 
-            // toolStrip1
+            // 고객ToolStripMenuItem
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1092, 25);
-            this.toolStrip1.TabIndex = 7;
-            this.toolStrip1.Text = "toolStrip1";
+            this.고객ToolStripMenuItem.Name = "고객ToolStripMenuItem";
+            this.고객ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.고객ToolStripMenuItem.Text = "고객";
+            this.고객ToolStripMenuItem.Click += new System.EventHandler(this.고객ToolStripMenuItem_Click);
             // 
-            // toolStripButton1
+            // btnConCheck
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(63, 22);
-            this.toolStripButton1.Text = "접속 체크";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.btnConCheck.Location = new System.Drawing.Point(1013, 0);
+            this.btnConCheck.Name = "btnConCheck";
+            this.btnConCheck.Size = new System.Drawing.Size(79, 24);
+            this.btnConCheck.TabIndex = 7;
+            this.btnConCheck.Text = "접속 체크";
+            this.btnConCheck.UseVisualStyleBackColor = true;
+            this.btnConCheck.Visible = false;
+            this.btnConCheck.Click += new System.EventHandler(this.btnConCheck_Click);
+            // 
+            // 장부작성ToolStripMenuItem
+            // 
+            this.장부작성ToolStripMenuItem.Name = "장부작성ToolStripMenuItem";
+            this.장부작성ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.장부작성ToolStripMenuItem.Text = "장부작성";
+            this.장부작성ToolStripMenuItem.Click += new System.EventHandler(this.장부작성ToolStripMenuItem_Click);
+            // 
+            // marqueeProgressBarControl1
+            // 
+            this.marqueeProgressBarControl1.Location = new System.Drawing.Point(987, 562);
+            this.marqueeProgressBarControl1.Name = "marqueeProgressBarControl1";
+            this.marqueeProgressBarControl1.Size = new System.Drawing.Size(8, 8);
+            this.marqueeProgressBarControl1.TabIndex = 9;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 695);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.marqueeProgressBarControl1);
+            this.Controls.Add(this.btnConCheck);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "자재관리프로그램";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.marqueeProgressBarControl1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,10 +135,12 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 닫기XToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 지역ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 직원ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 물품ToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Button btnConCheck;
+        private System.Windows.Forms.ToolStripMenuItem 고객ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 장부작성ToolStripMenuItem;
+        private DevExpress.XtraEditors.MarqueeProgressBarControl marqueeProgressBarControl1;
     }
 }
 

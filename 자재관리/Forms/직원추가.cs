@@ -9,7 +9,7 @@ namespace 자재관리.Forms
     {
         static 직원추가 thisform = null;
         static object _thisform = new object();
-        DataRow curruntrow;
+
 
         SQLConnect connect = new SQLConnect();
         DataTable dt = new DataTable();
@@ -18,12 +18,7 @@ namespace 자재관리.Forms
         private 직원추가()
         {
             InitializeComponent();
-            Init();
-        }
-
-        void Init()
-        {
-
+            /*
             openFileDialog1.FileOk += (o, v) =>
             {
                 try
@@ -38,9 +33,7 @@ namespace 자재관리.Forms
 
                     throw ex;
                 }
-            }; //그림 불러오기 이벤트 추가
-
-            
+            }; //그림 불러오기 이벤트 추가*/
         }
         public static 직원추가 instance
             {
@@ -64,69 +57,51 @@ namespace 자재관리.Forms
 
         private void 직원추가_Load(object sender, System.EventArgs e)
         {
-            connect.SelectandFill("SELECT * FROM dbo.직원");
-            this.dt = connect.mydatatable;
 
+            connect.SelectandFill("SELECT * FROM employee");
+            this.dt = connect.datatable;
+            dt.TableName = "employee";
 
-            listBox1.DataBindings.Add("DataSource", dt, dt.TableName);
-            listBox1.DataBindings.Add("DisplayMember",dt,"성명");
-            txtID.DataBindings.Add("Text", dt, "ID");
-            txt이름.DataBindings.Add("Text", dt, "성명");
-            txt전번.DataBindings.Add("Text", dt, "전화번호");
-            txt주민.DataBindings.Add("Text", dt, "생년월일");
-            txt면허.DataBindings.Add("Text", dt, "면허번호");
-            txt경력.DataBindings.Add("Text", dt, "경력");
-            txt현주소.DataBindings.Add("Text", dt, "주소");
-            txt비고.DataBindings.Add("Text", dt, "비고");
-            pictureBox1.DataBindings.Add("Image", dt, "image");                                                                                                                                                                                                                       
+            listBox1.DataSource = dt;
+            listBox1.DisplayMember = "employee_Name";
+          //  listBox1.DataBindings.Add("DataSource", dt, dt.TableName);
+           // listBox1.DataBindings.Add("DisplayMember",dt,"employee_Name");
+            txtID.DataBindings.Add("Text", dt, "employee_ID");
+            txt이름.DataBindings.Add("Text", dt, "employee_Name");
+            txt전번.DataBindings.Add("Text", dt, "employee_Phone");
+            txt현주소.DataBindings.Add("Text", dt, "employee_address");
+            txt비고.DataBindings.Add("Text", dt, "employee_extr");
+            //pictureBox1.DataBindings.Add("Image", dt, "image");                                                                                                                                                                                                                       
 
            listBox1.Refresh();
-            
-
-            
         }
 
 
 
-        private void button2_Click(object sender, System.EventArgs e)
+        private void btnclose_Click(object sender, System.EventArgs e)
         {
             Close();
         }
 
-        private void button3_Click(object sender, System.EventArgs e)
+        private void btn삭제_Click(object sender, System.EventArgs e)
         {
-
- 
-            
+            System.Data.SqlClient.SqlParameterCollection parameters = connect.Command.Parameters;
+            parameters.Add(new System.Data.SqlClient.SqlParameter("employee_ID", txtID.Text));
+            connect.transactRun("employee_delete");
         }
 
-        private void 직원BindingSource_CurrentChanged(object sender, System.EventArgs e)
+        private void btn신규_Click(object sender, System.EventArgs e)
         {
-
+            System.Data.SqlClient.SqlParameterCollection parameters = connect.Command.Parameters; 
+            parameters.Add(new System.Data.SqlClient.SqlParameter("employee_Name",txt이름.Text));
+            parameters.Add(new System.Data.SqlClient.SqlParameter("employee_Phone",txt전번.Text));
+            parameters.Add(new System.Data.SqlClient.SqlParameter("employee_address",txt현주소.Text));
+            parameters.Add(new System.Data.SqlClient.SqlParameter("employee_extr", txt비고.Text));
+           
+            connect.transactRun("employee_insert");
         }
 
-        private void 직원추가_FormClosed(object sender,System.EventArgs e)
-        {
 
-        }
-
-        private void datachange(object sender, System.EventArgs e)
-        {
-            openFileDialog1.ShowDialog(this.MdiParent);
-        }
-
-        private void pictureBox1_Click(object sender, System.EventArgs e)
-        {
-            
-            openFileDialog1.ShowDialog(this.MdiParent);
-        }
-
-        private void button1_Click_1(object sender, System.EventArgs e)
-        {
-            직원목록 목록 = 직원목록.instance;
-            목록.MdiParent = this.MdiParent;
-            목록.Show();
-        }
 
 
     }

@@ -17,26 +17,13 @@ namespace 자재관리
             InitializeComponent();
         }
 
-        private void 지역추가ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Forms.지역 지역form = Forms.지역.instance;
-            지역form.MdiParent = this;
-            지역form.Show();
-        }
+
 
         private void 직원ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-
-
-        private void 장부작성ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Forms.거래장부작성 form = Forms.거래장부작성.Instance;
-            form.MdiParent = this;
-            form.Show();
-        }
 
 
         private void 닫기XToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,6 +34,33 @@ namespace 자재관리
         private void 물품ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Forms.품목추가 form = Forms.품목추가.instance;
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+#if DEBUG
+            btnConCheck.Visible = true;
+#endif
+        }
+
+        private void btnConCheck_Click(object sender, EventArgs e)
+        {
+            SQLConnect.ConnectionCheck();
+        }
+
+        private void 고객ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.고객추가 form = Forms.고객추가.instance;
+            form.MdiParent = this;
+            form.Show();
+
+        }
+
+        private void 장부작성ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.입출고등록 form = Forms.입출고등록.instance;
             form.MdiParent = this;
             form.Show();
         }
