@@ -10,5 +10,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=수우BOOK;Initial Catalog=자재관리DB;Persist Security Info=True;User ID=sa;Password=sapass</Value>
     </Setting>
+    <Setting Name="폰트" Type="System.Drawing.Font" Scope="Application">
+      <Value Profile="(Default)">맑은 고딕, 9pt</Value>
+    </Setting>
+    <Setting Name="EnableSkin" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

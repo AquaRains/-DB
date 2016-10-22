@@ -26,9 +26,7 @@ namespace 자재관리
 
         private void 직원ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Forms.직원추가 form = Forms.직원추가.instance;
-            form.MdiParent = this;
-            form.Show();
+
         }
 
 
@@ -51,6 +49,15 @@ namespace 자재관리
             Forms.품목추가 form = Forms.품목추가.instance;
             form.MdiParent = this;
             form.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            SQLConnect connect = new SQLConnect();
+            if(connect.connectcheck())
+            {
+                MessageBox.Show("성공");
+            }
         }
     }
 }

@@ -13,8 +13,8 @@ namespace 자재관리
     class SQLConnect
     {
         const string _server = "127.0.0.1";
-        const string _uid = "sa";
-        const string _pwd = "sapass";
+        const string _uid = "mytest01";
+        const string _pwd = "123!@#";
         const string _dbname = "자재관리DB";
         
 
@@ -26,6 +26,29 @@ namespace 자재관리
         SqlDataAdapter adapter;
         SqlCommandBuilder builder = new SqlCommandBuilder();
         public DataTable mydatatable = new DataTable();
+
+        public bool connectcheck()
+        {
+            bool state = false;
+            try
+            {
+                Connection.Open();
+                state = true;
+
+            }
+            catch (Exception ex)
+            {
+                state = false;
+                System.Windows.Forms.MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (Connection.State == ConnectionState.Open) Connection.Close();
+
+            }
+
+            return state;
+        }
 
 
         public SQLConnect()

@@ -33,5 +33,26 @@ namespace 자재관리.Properties {
                 return ((string)(this["DBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("맑은 고딕, 9pt")]
+        public global::System.Drawing.Font 폰트 {
+            get {
+                return ((global::System.Drawing.Font)(this["폰트"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EnableSkin {
+            get {
+                return ((bool)(this["EnableSkin"]));
+            }
+            set {
+                this["EnableSkin"] = value;
+            }
+        }
     }
 }
