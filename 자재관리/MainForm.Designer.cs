@@ -35,10 +35,7 @@
             this.고객ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnConCheck = new System.Windows.Forms.Button();
             this.장부작성ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.marqueeProgressBarControl1 = new DevExpress.XtraEditors.MarqueeProgressBarControl();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marqueeProgressBarControl1.Properties)).BeginInit();
-            this.SuspendLayout();
+
             // 
             // menuStrip1
             // 
@@ -99,20 +96,14 @@
             this.장부작성ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.장부작성ToolStripMenuItem.Text = "장부작성";
             this.장부작성ToolStripMenuItem.Click += new System.EventHandler(this.장부작성ToolStripMenuItem_Click);
-            // 
-            // marqueeProgressBarControl1
-            // 
-            this.marqueeProgressBarControl1.Location = new System.Drawing.Point(987, 562);
-            this.marqueeProgressBarControl1.Name = "marqueeProgressBarControl1";
-            this.marqueeProgressBarControl1.Size = new System.Drawing.Size(8, 8);
-            this.marqueeProgressBarControl1.TabIndex = 9;
+
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 695);
-            this.Controls.Add(this.marqueeProgressBarControl1);
+
             this.Controls.Add(this.btnConCheck);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -125,7 +116,7 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marqueeProgressBarControl1.Properties)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,7 +131,7 @@
         private System.Windows.Forms.Button btnConCheck;
         private System.Windows.Forms.ToolStripMenuItem 고객ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 장부작성ToolStripMenuItem;
-        private DevExpress.XtraEditors.MarqueeProgressBarControl marqueeProgressBarControl1;
+
     }
 }
 

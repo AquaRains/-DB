@@ -53,9 +53,9 @@ namespace 자재관리.Forms
 
         }
         private void dtfill()
-        {     
-                dbconnect.SelectandFill("SELECT * FROM dbo.customers");
-                this.dt = dbconnect.datatable;
+        {
+
+            this.dt = SQLConnect.SelectandFill("SELECT * FROM dbo.customers");
         }
         private void button1_Click(object sender, EventArgs e)//닫기버튼
         {
