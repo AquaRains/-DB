@@ -65,14 +65,14 @@ namespace 자재관리.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlParameterCollection parameters = connect.Command.Parameters;
+            SqlParameterCollection parameters = connect.Command.Parameters;               // parameter 입력
                 parameters.Add(new SqlParameter("product_name",txt품목명.Text));
                 parameters.Add(new SqlParameter("product_company", txt제조회사.Text));
                 parameters.Add(new SqlParameter("product_type", txt종류.Text));
                 parameters.Add(new SqlParameter("product_scale", txt규격.Text));
                 parameters.Add(new SqlParameter("product_price", txt가격.Text));
                 parameters.Add(new SqlParameter("product_isdanger", chk취급주의.Checked ? 1 : 0));
-                connect.transactRun("products_insert");
+                connect.transactRun("products_insert");  //Stored Procdure 실행
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -80,8 +80,8 @@ namespace 자재관리.Forms
             int? index = dataGridView1.SelectedColumns[0].DisplayIndex;
 
             SqlParameterCollection parameters = connect.Command.Parameters;
-            parameters.Add(new SqlParameter("product_id", index));
-            connect.transactRun("products_delete");
+            parameters.Add(new SqlParameter("product_id", index)); //index를 기준으로 데이터 행 삭제
+            connect.transactRun("products_delete"); //Stored Procdure 실행
         }
     }
 }

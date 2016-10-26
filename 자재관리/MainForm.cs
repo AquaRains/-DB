@@ -65,13 +65,6 @@ namespace 자재관리
             form.Show();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            SQLConnect connect = new SQLConnect();
-            if(connect.connectcheck())
-            {
-                MessageBox.Show("성공");
-            }
-        }
+
     }
 }
