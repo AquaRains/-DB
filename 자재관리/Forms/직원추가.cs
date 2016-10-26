@@ -58,8 +58,8 @@ namespace 자재관리.Forms
         private void 직원추가_Load(object sender, System.EventArgs e)
         {
 
-            connect.SelectandFill("SELECT * FROM employee");
-            this.dt = connect.datatable;
+
+            this.dt = SQLConnect.SelectandFill("SELECT * FROM employee");
             dt.TableName = "employee";
 
             listBox1.DataSource = dt;

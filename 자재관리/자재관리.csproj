@@ -125,6 +125,7 @@
     <Content Include="DB_Tables\inout.sql" />
     <Content Include="DB_Tables\inout_detail.sql" />
     <Content Include="DB_Tables\products.sql" />
+    <Content Include="SP\inout_access.sql" />
     <Content Include="SP\employee_access.sql" />
     <Content Include="SP\products_access.sql" />
     <Content Include="SP\customers_access.sql" />

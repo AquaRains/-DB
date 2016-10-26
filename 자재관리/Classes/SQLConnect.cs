@@ -27,7 +27,7 @@ namespace 자재관리
 
 
         string ConnectionStr = "";
-        SqlConnection Connection;
+        static SqlConnection Connection;
         public SqlCommand Command = new SqlCommand();
         public SqlDataAdapter adapter;
         public DataTable datatable;
@@ -82,17 +82,16 @@ namespace 자재관리
         /// SQL구문을 이용해서 adapter에 fill합니다. (보통 Table단위로 Select하게 됨)
         /// </summary>
         /// <param name="sql">SQL 구문 입력</param>
-        public void SelectandFill(string sql)
+        public static DataTable SelectandFill(string sql)
         {
-            datatable = new DataTable();
-            Command.CommandType = CommandType.Text;
-            Command.CommandText = sql;
-            selectcommand = Command.Clone();
-            adapter = new SqlDataAdapter(selectcommand);
-            datatable.Clear();
-            adapter.Fill(datatable);
-  
+            DataTable _datatable = new DataTable();
+            SqlCommand selectcommand = new SqlCommand(sql, Connection);
+            selectcommand.CommandType = CommandType.Text;
+            SqlDataAdapter adapter = new SqlDataAdapter(selectcommand);
+            _datatable.Clear();
+            adapter.Fill(_datatable);
 
+            return _datatable;
         }
         /// <summary>
         /// stored procedure 호출합니다.
@@ -129,7 +128,23 @@ namespace 자재관리
                 adapter.Fill(datatable);
             }
             Connection.Close();
+        }
 
+
+        /// <summary>
+        /// 테스트 메소드
+        /// </summary>
+        /// <param name="strVar">메세지에 표시될 스트링값</param>
+        public void testTh(string strVar)
+        {
+            //1. 인자값이 test인경우
+            if (strVar == "test")
+            {//1-1. 받은 인자값에 텍스트를 더한다.
+            }
+            else
+            {//1-2. test가 아닌경우 오류 표시후 종료
+            }
+            
         }
 
 

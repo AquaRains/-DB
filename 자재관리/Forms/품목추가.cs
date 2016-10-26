@@ -44,8 +44,8 @@ namespace 자재관리.Forms
         {
            
             connect = new SQLConnect();
-           connect.SelectandFill("SELECT * FROM products");
-           dt = connect.datatable;
+           dt = SQLConnect.SelectandFill("SELECT * FROM products");
+           
             dataGridView1.DataSource = dt;
 
             txt품목명.DataBindings.Add("text",dt,"product_name");
